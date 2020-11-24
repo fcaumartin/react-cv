@@ -5,7 +5,7 @@ class FormProfil extends React.Component {
     render() {
         return (
             <Form>
-                <Form.Row>
+                <Form.Row className="mb-2">
                     <Col>
                         <Form.Control
                             value={this.props.value.nom}
@@ -28,7 +28,7 @@ class FormProfil extends React.Component {
                         />
                     </Col>
                 </Form.Row>
-                <Form.Row>  
+                <Form.Row className="mb-2">  
                     <Col>
                         <Form.Control
                             value={this.props.value.adresse}
@@ -47,6 +47,27 @@ class FormProfil extends React.Component {
                                 this.props.onProfilChange(this.props.value)
                             }}
                             ref="villeTextInput" placeholder="Ville"
+                        />
+                    </Col>
+                </Form.Row>
+                <Form.Row>  
+                    <Col>
+                        <Form.Control  className="mb-2"
+                            value={this.props.value.titre}
+                            onChange={() => { 
+                                this.props.value.titre=this.refs.titreTextInput.value; 
+                                this.props.onProfilChange(this.props.value)
+                            }}
+                            ref="titreTextInput" placeholder="Titre"
+                        />
+                        <Form.Control
+                            as="textarea"
+                            value={this.props.value.description}
+                            onChange={() => { 
+                                this.props.value.description=this.refs.descriptionTextInput.value; 
+                                this.props.onProfilChange(this.props.value)
+                            }}
+                            ref="descriptionTextInput" placeholder="Desciption"
                         />
                     </Col>
                 </Form.Row>

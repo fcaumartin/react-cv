@@ -16,7 +16,9 @@ class CV extends React.Component {
                 adresse: "Carnaby Street",
                 ville: "London",
                 phone: "+33 6 58 96 52 14",
-                email: "jodo@yahoo.com"
+                email: "jodo@yahoo.com",
+                titre: "Développeur Web",
+                description: "bla bla bla"
             },
             experiences: [
                 { 
@@ -171,14 +173,11 @@ class CV extends React.Component {
                             <div className="email">{this.state.profil.email}</div>
                         </section>
                         <section className="titre">
-                            <div className="poste">Developpeur Logiciel</div>
+                            <div className="poste">{this.state.profil.titre}</div>
                         </section>
                         <section className="intro">
                             <header>Profil</header>
-                            <div className="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
-                                corrupti odio architecto ipsa libero a totam iusto odit saepe. Tempore debitis error
-                                beatae. Earum totam consequatur accusantium repellendus, veritatis commodi!
-                            </div>
+                            <div className="text">{this.state.profil.description}</div>
                         </section>
                         <section className="experiences">
                             <header>Experiences</header>
@@ -206,9 +205,7 @@ class CV extends React.Component {
                                         <div className="formation">
                                             <div class="date-debut">{formation.dateDebut}</div>
                                             <div class="date-fin">{formation.dateFin}</div>
-                                            <div class="entreprise">{formation.entreprise}</div>
-                                            <div class="ville">{formation.ville}</div>
-                                            <div class="logo">{formation.logo}</div>
+                                            <div class="ecole">{formation.entreprise}</div>
                                             <div class="titre">{formation.titre}</div>
                                             <div class="desciption">{formation.description}</div>
                                         </div>
