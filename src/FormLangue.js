@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Form, Button } from 'react-bootstrap';
 
-class FormCompetence extends React.Component {
+class FormLangue extends React.Component {
 
     handleChange(evt) {
         //console.log(this);
@@ -36,7 +36,7 @@ class FormCompetence extends React.Component {
                         
                     
                         <Col xs={1}>
-                            <Button  onClick={() => this.props.delCompetence(this)} >X</Button>
+                            <Button  onClick={() => this.props.delLangue(this)} >X</Button>
                         </Col>
                     </Form.Row>
                     
@@ -46,4 +46,4 @@ class FormCompetence extends React.Component {
     }
 }
 
-export default FormCompetence;
+export default FormLangue;

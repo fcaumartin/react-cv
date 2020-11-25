@@ -1,15 +1,15 @@
 import React from 'react';
 import { Col, Form, Button } from 'react-bootstrap';
 
-class FormCompetence extends React.Component {
+class FormLangue extends React.Component {
 
     handleChange(evt) {
         //console.log(this);
-        let competence = {
-            libelle: this.refs.libelle.value,
-            niveau: this.refs.niveau.value
+        let reseau = {
+            type: this.refs.type.value,
+            url: this.refs.url.value
         };
-        this.props.onChange(competence);
+        this.props.onChange(reseau);
     }
 
     render() {
@@ -17,26 +17,26 @@ class FormCompetence extends React.Component {
             <div >
                 <Form >
                 <Form.Row className="mb-2">
-                        <Col xs={9}>
-                            <Form.Control
-                                value={this.props.value.libelle}
-                                onChange={(evt) => this.handleChange(evt)}
-                                ref="libelle" 
-                                placeholder="Libelle"
-                            />
-                        </Col>
                         <Col xs={2}>
                             <Form.Control
-                                value={this.props.value.niveau}
+                                value={this.props.value.type}
                                 onChange={(evt) => this.handleChange(evt)}
-                                ref="niveau"
-                                placeholder="Niveau"
+                                ref="type" 
+                                placeholder="Nom"
+                            />
+                        </Col>
+                        <Col xs={9}>
+                            <Form.Control
+                                value={this.props.value.url}
+                                onChange={(evt) => this.handleChange(evt)}
+                                ref="url"
+                                placeholder="Adresse du profil"
                             />
                         </Col>
                         
                     
                         <Col xs={1}>
-                            <Button  onClick={() => this.props.delCompetence(this)} >X</Button>
+                            <Button  onClick={() => this.props.delReseau(this)} >X</Button>
                         </Col>
                     </Form.Row>
                     
@@ -46,4 +46,4 @@ class FormCompetence extends React.Component {
     }
 }
 
-export default FormCompetence;
+export default FormLangue;
