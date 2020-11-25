@@ -93,7 +93,7 @@ class FormExperience extends React.Component {
                     </Form.Row>
                     <Form.Row className="mb-3">
                         <Col>
-                            <Button onClick={() => this.props.delExperience(this)} >Supprimer</Button>
+                            <Button size="sm" onClick={() => this.props.delExperience(this)} >Supprimer</Button>
                         </Col>
                     </Form.Row>
                 </Form>

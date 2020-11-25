@@ -16,6 +16,16 @@ class FormFormation extends React.Component {
         return (
             <div >
                 <Form >
+                <Form.Row className="mb-2">
+                        <Col>
+                            <Form.Control
+                                value={this.props.value.ecole}
+                                onChange={(evt) => this.handleChange(evt)}
+                                ref="ecole" 
+                                placeholder="Ecole"
+                            />
+                        </Col>
+                    </Form.Row>
                     <Form.Row className="mb-2">
                         <Col>
                             <Form.Control
@@ -37,58 +47,35 @@ class FormFormation extends React.Component {
                     <Form.Row className="mb-2">
                         <Col>
                             <Form.Control
-                                value={this.props.value.titre}
-                                onChange={(evt) => this.handleChange(evt)}
-                                ref="titre" 
-                                placeholder="Titre"
-                            />
-                        </Col>
-                    </Form.Row>
-                    <Form.Row className="mb-2">
-                        <Col>
-                            <Form.Control
-                                value={this.props.value.entreprise}
-                                onChange={(evt) => this.handleChange(evt)}
-                                ref="entreprise" 
-                                placeholder="Entreprise"
-                            />
-                        </Col>
-                    </Form.Row>
-                    <Form.Row className="mb-2">
-                        <Col>
-                            <Form.Control
-                                value={this.props.value.ville}
-                                onChange={(evt) => this.handleChange(evt)}
-                                ref="ville"
-                                placeholder="Ville"
-                            />
-                        </Col>
-                        <Col>
-                            <Form.File 
-                                id="custom-file"
-                                label="Logo"
-                                custom
-                                // value={this.props.value.logo}
-                                // onChange={(evt) => this.handleChange(evt)}
-                                ref="logo"
-                                placeholder="Logo"
-                            />
-                        </Col>
-                    </Form.Row>
-                    <Form.Row className="mb-2">
-                        <Col>
-                            <Form.Control
                                 as="textarea"
-                                value={this.props.value.description}
+                                value={this.props.value.desciption}
                                 onChange={(evt) => this.handleChange(evt)}
-                                ref="description" 
-                                placeholder="Description"
+                                ref="desciption" 
+                                placeholder="Desciption"
+                            />
+                        </Col>
+                    </Form.Row>
+                    <Form.Row className="mb-2">
+                        <Col>
+                            <Form.Control
+                                value={this.props.value.diplome}
+                                onChange={(evt) => this.handleChange(evt)}
+                                ref="diplome"
+                                placeholder="Diplome"
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Control 
+                                value={this.props.value.niveau}
+                                onChange={(evt) => this.handleChange(evt)}
+                                ref="niveau"
+                                placeholder="Niveau"
                             />
                         </Col>
                     </Form.Row>
                     <Form.Row className="mb-3">
                         <Col>
-                            <Button onClick={() => this.props.delFormation(this)} >Supprimer</Button>
+                            <Button size="sm" onClick={() => this.props.delFormation(this)} >Supprimer</Button>
                         </Col>
                     </Form.Row>
                 </Form>
