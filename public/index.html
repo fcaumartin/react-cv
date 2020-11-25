@@ -51,14 +51,14 @@
 
 
 <script>
-  console.log("start");
+  //console.log("start");
   window.addEventListener("resize", function() {
-      console.log("resize");
+      //console.log("resize");
       let elt = document.querySelector(".paper");
       let l1 = elt.clientWidth;
       let h1 = elt.clientHeight;
-      let largeur = document.querySelector(".col-sm-7").clientWidth;
-      console.dir(elt);
+      let largeur = document.querySelector(".paper-container").clientWidth;
+      //console.dir(elt);
       let ratio = largeur/elt.clientWidth;
       ratio = ratio * 0.8;
       let nouvelle_largeur = elt.clientWidth * ratio;
@@ -69,8 +69,9 @@
       let deltaH = (h1-h2)/2;
       elt.style.marginLeft = "-" + delta + "px";
       elt.style.marginTop = "-" + deltaH + "px";
-      console.dir(delta);
+      //console.dir(delta);
   });
 
+  window.dispatchEvent(new Event('resize'));
 
 </script>
