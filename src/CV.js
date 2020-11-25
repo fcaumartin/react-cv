@@ -86,12 +86,14 @@ class CV extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-12">
+                <div className="col-6">
                     <Dialog />
+                </div>
+                <div className="col-6 text-right">
                     <Templates />
                 </div>
                 
-                <div className="col-sm-5">
+                <div className="col-sm-6">
                     <h1>Module de création de CV.</h1>
                     Cliquez sur les onglets ci-dessous pour compléter les différentes rubriques de votre CV
 
@@ -156,7 +158,7 @@ class CV extends React.Component {
                     
                 </div>
 
-                <div  className="col-sm-7 ">
+                <div  className="col-sm-6 paper-container">
 
                     <div className="paper">
                         <section className="identite">
