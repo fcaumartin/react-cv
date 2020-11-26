@@ -4,7 +4,6 @@
     src: url("fonts/fa-solid-900.woff2") format("woff2"),
          url("fonts/fa-solid-900.woff") format("woff");
     }
-
 @font-face {
     font-family: "font2";   
     src: url("fonts/fa-regular-400.woff2") format("woff2"),
@@ -43,11 +42,7 @@
     .formations { grid-area: 6 / 3 / 8 / 6; }
 
 
-.description {
-margin-left: 105px;
-}
-
-/* Disposition Icones */
+    /* Insertion Icones */
 .paper>.profil>header:before {
     font-family: "font1";
     content: "\f007"; 
@@ -80,41 +75,35 @@ margin-left: 105px;
 }
 
 
+/* Couleur Header + Nom */
 header, .paper>.identite {
     color: #39C3B1;
 }
 
 
-.paper>.intro>.text {
+/* Justification zones de texte */
+.paper>.intro>.text, .description {
     text-align: justify;
 }
 
 
+/* Paramètres bloc nom */
 .paper>.identite>.nom {
     text-transform: uppercase;
     font-size: 3em;
     margin-bottom: -40px;
-    /* background-color: #eeeeee; */
 }
 
+
+/* Paramètres bloc poste */
 .paper>.titre>.poste{
     font-size: 1.5em;
     text-transform: uppercase;
     /* padding-bottom: 10px; */
 }
 
-/* .paper>.intro, .paper>.experiences, .paper>.formations{
-    border-left: 2px darkblue solid;
-} */
 
-/* .paper>.profil, .paper>.competences, .paper>.interets{
-    margin-right: 20px;
-} */
-
-/* .paper>.intro>header, .paper>.intro>div, .paper>.experiences>header, .paper>.experiences>section, .paper>.formations>header, .paper>.formations>section {
-    margin-left: 20px;
-} */
-
+/* Paramètres bloc Contact */
 .paper>.profil>header {
     text-transform: uppercase;
     margin-top: 1em;
@@ -122,91 +111,106 @@ header, .paper>.identite {
     border-bottom: 1.5px darkgray solid;
 }
 
+
+/* Paramètres bloc Intro */
 .paper>.intro>header {
     text-transform: uppercase;
     margin-top: 1em;
     font-size: 1.2em;
 }
 
+
+/* Paramètres bloc Expériences */
 .paper>.experiences>header {
     text-transform: uppercase;
     margin-top: 1em;
     font-size: 1.2em;
     border-bottom: 1.5px darkgray solid;
 }
-
-
 .paper>.experiences>div>.experience>.date-debut {
     text-transform: capitalize;
     font-weight: 600;
-    display: inline-block;
-    width: 100px;
 }
-
 .paper>.experiences>div>.experience>.date-fin {
     font-weight: 600;
-    display: inline;
-    width: 100px;
-}
 
+}
 .paper>.experiences>div>.experience>.entreprise {
     font-weight: 600;
-    font-size: 1.1em;
 }
+.paper>.experiences>div>.experience>.titre {
+    font-weight: 600;
+} 
 
+.paper>.experiences>.experience>.description {
+    margin-bottom: 1em;
+}
+.experience.org {
+    overflow: auto;
+}
+.experience.org .entry {
+    float: left;
+    width: 100px;
+}
+.experience.org.n1 .entry:nth-child(1n+1) {
+    clear: left;
+}
+.experience.org.n1 .entry:nth-child(3n+1) {
+    clear: left;
+}
+/*
 .paper>.experiences>div>.experience>.ville {
     font-weight: 600;
     display: inline-block;
     width: 100px;
 }
-.paper>.experiences>div>.experience>.logo {
+*/
+
+
+/* Paramètres bloc Formations */
+.paper>.formations>div>.formation>.date-debut {
+    text-transform: capitalize;
     font-weight: 600;
-    display: inline;
 }
-.paper>.experiences>.experience>.description {
-    margin-bottom: 1em;
+.paper>.formations>div>.formation>.date-fin {
+    font-weight: 600;
 }
+.formation.org {
+    overflow: auto;
+}
+.formation.org .entry {
+    float: left;
+    width: 100px;
+}
+.formation.org.n2 .entry:nth-child(2n+1) {
+    clear: left;
+}
+.formation.org.n2 .entry:nth-child(4n+1) {
+    clear: left;
+}
+
 
 /* Mise en page descriptions */
 .paper>.experiences>.experience>.description, .paper>.formations>.formation>.description {
     text-align: justify;
-    padding-right: 15px;
 }
-
 .paper>.formations>header {
     text-transform: uppercase;
     margin-top: 1em;
     font-size: 1.2em;
     border-bottom: 1.5px darkgray solid;
 }
+.description {
+    margin-left: 100px;
+    }
 
-/* .paper>.formations>.formation {
-    border-bottom: 1px gray
-} */
-
-
+/* Paramètres bloc Compétences */
 .paper>.competences>header {
     text-transform: uppercase;
     margin-top: 1em;
     font-size: 1.2em;
     border-bottom: 1.5px darkgray solid;
 }
-
-.paper>.langues>header {
-    text-transform: uppercase;
-    margin-top: 1em;
-    font-size: 1.2em;
-    border-bottom: 1.5px darkgray solid;
-    
-}
-
-.paper>.reseaux>header {
-    text-transform: uppercase;
-    margin-top: 1em;
-    font-size: 1.2em;
-    border-bottom: 1.5px darkgray solid;
-}
-
 .paper>.competences>div>.competence>.libelle {
     display: inline-block;
     width: 100px;
@@ -215,4 +219,32 @@ header, .paper>.identite {
 .paper>.competences>div>.competence>.niveau {
     display: inline-block;
     width: 100px;
+}
+
+
+/* Paramètres bloc Langues */
+.paper>.langues>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 1.5px darkgray solid;
+    
+}
+.paper>.langues>div>.langue>.libelle {
+    display: inline-block;
+    width: 100px;
+}
+
+.paper>.langues>div>.langue>.niveau {
+    display: inline-block;
+    width: 100px;
+}
+
+
+/* Paramètres bloc Réseaux */
+.paper>.reseaux>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 1.5px darkgray solid;
 }
