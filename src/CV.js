@@ -158,14 +158,14 @@ class CV extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-6">
+                <div className="col-6 no-print">
                     <Dialog />
                 </div>
-                <div className="col-6 text-right">
+                <div className="col-6 text-right no-print">
                     <Templates />
                 </div>
                 
-                <div className="col-sm-6">
+                <div className="col-sm-6 no-print">
                     <div className="row">
                         <div className="col-9">
                             <h1>Module de création de CV.</h1>

@@ -1,0 +1,218 @@
+/* Chargement font fontawesome.com */
+@font-face {
+    font-family: "font1";
+    src: url("fonts/fa-solid-900.woff2") format("woff2"),
+         url("fonts/fa-solid-900.woff") format("woff");
+    }
+
+@font-face {
+    font-family: "font2";   
+    src: url("fonts/fa-regular-400.woff2") format("woff2"),
+         url("fonts/fa-regular-400.woff") format("woff");
+   }
+
+
+/* Habillage layout */
+.paper {
+    padding: 40px;
+    border: 2px gray solid;
+    box-shadow: 10px 10px 10px gray;
+    width: 21cm;
+    min-height: 29.7cm;
+    transform: scale(0.8);
+}
+
+
+/* Grid principal */
+.paper {
+    display: grid;
+    grid-template-columns: 0.5fr repeat(4, 1fr);
+    grid-template-rows: 0.5fr 0.3fr 0.5fr repeat(4, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+    }
+    
+    .identite { grid-area: 1 / 1 / 2 / 6; }
+    .titre { grid-area: 2 / 1 / 3 / 6; }
+    .intro { grid-area: 3 / 1 / 4 / 6; }
+    .profil { grid-area: 4 / 1 / 5 / 3; }
+    .competences { grid-area: 5 / 1 / 6 / 3; }
+    .langues { grid-area: 6 / 1 / 7 / 3; }
+    .reseaux { grid-area: 7 / 1 / 8 / 3; }
+    .experiences { grid-area: 4 / 3 / 6 / 6; }
+    .formations { grid-area: 6 / 3 / 8 / 6; }
+
+
+.description {
+margin-left: 105px;
+}
+
+/* Disposition Icones */
+.paper>.profil>header:before {
+    font-family: "font1";
+    content: "\f007"; 
+    padding-right: 10px;
+}
+.paper>.competences>header:before {
+    font-family: "font1";
+    content: "\f013"; 
+    padding-right: 10px;
+}
+.paper>.langues>header:before {
+    font-family: "font2";
+    content: "\f27a"; 
+    padding-right: 10px;
+}
+.paper>.reseaux>header:before {
+    font-family: "font1";
+    content: "\f1e0"; 
+    padding-right: 10px;
+}
+.paper>.experiences>header:before {
+    font-family: "font1";
+    content: "\f0b1"; 
+    padding-right: 10px;
+}
+.paper>.formations>header:before {
+    font-family: "font1";
+    content: "\f19d"; 
+    padding-right: 10px;
+}
+
+
+header, .paper>.identite {
+    color: #39C3B1;
+}
+
+
+.paper>.intro>.text {
+    text-align: justify;
+}
+
+
+.paper>.identite>.nom {
+    text-transform: uppercase;
+    font-size: 3em;
+    margin-bottom: -40px;
+    /* background-color: #eeeeee; */
+}
+
+.paper>.titre>.poste{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    /* padding-bottom: 10px; */
+}
+
+/* .paper>.intro, .paper>.experiences, .paper>.formations{
+    border-left: 2px darkblue solid;
+} */
+
+/* .paper>.profil, .paper>.competences, .paper>.interets{
+    margin-right: 20px;
+} */
+
+/* .paper>.intro>header, .paper>.intro>div, .paper>.experiences>header, .paper>.experiences>section, .paper>.formations>header, .paper>.formations>section {
+    margin-left: 20px;
+} */
+
+.paper>.profil>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 1.5px darkgray solid;
+}
+
+.paper>.intro>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+}
+
+.paper>.experiences>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 1.5px darkgray solid;
+}
+
+
+.paper>.experiences>div>.experience>.date-debut {
+    text-transform: capitalize;
+    font-weight: 600;
+    display: inline-block;
+    width: 100px;
+}
+
+.paper>.experiences>div>.experience>.date-fin {
+    font-weight: 600;
+    display: inline;
+    width: 100px;
+}
+
+.paper>.experiences>div>.experience>.entreprise {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.paper>.experiences>div>.experience>.ville {
+    font-weight: 600;
+    display: inline-block;
+    width: 100px;
+}
+.paper>.experiences>div>.experience>.logo {
+    font-weight: 600;
+    display: inline;
+}
+.paper>.experiences>.experience>.description {
+    margin-bottom: 1em;
+}
+
+/* Mise en page descriptions */
+.paper>.experiences>.experience>.description, .paper>.formations>.formation>.description {
+    text-align: justify;
+    padding-right: 15px;
+}
+
+.paper>.formations>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 1.5px darkgray solid;
+}
+
+/* .paper>.formations>.formation {
+    border-bottom: 1px gray
+} */
+
+
+.paper>.competences>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 1.5px darkgray solid;
+}
+
+.paper>.langues>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 1.5px darkgray solid;
+    
+}
+
+.paper>.reseaux>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 1.5px darkgray solid;
+}
+
+.paper>.competences>div>.competence>.libelle {
+    display: inline-block;
+    width: 100px;
+}
+
+.paper>.competences>div>.competence>.niveau {
+    display: inline-block;
+    width: 100px;
+}
