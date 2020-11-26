@@ -8,10 +8,20 @@ class FormProfil extends React.Component {
     handleUploadPhoto() {
         console.log("send");
         axios.post("https://127.0.0.1:8000/api/test", {})
+        .catch(function (error) {
+            console.log("Un problème est survenu... ");
+            console.log(error);
+            if (error.response) {
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+              }
+          })
         .then( (res) => {
             console.log("return");
             console.log(res);
         });
+        
     }
 
     render() {
