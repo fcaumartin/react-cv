@@ -187,6 +187,9 @@
     color: #39C1A1;
     border-bottom: 1.5px darkgray solid;
 }
+.paper>.reseaux {
+    padding: 0 15px;
+}
 
 
 /* Paramètres bloc Contact */

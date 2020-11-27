@@ -30,6 +30,27 @@
     transform: scale(0.8);
 }
 
+
+/* Grid principal */
+.paper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.4fr 0.2fr 0.4fr repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .identite { grid-area: 1 / 1 / 2 / 5; }
+    .titre { grid-area: 2 / 1 / 3 / 5; }
+    .profil { grid-area: 3 / 1 / 5 / 2; }
+    .competences { grid-area: 5 / 1 / 6 / 2; }
+    .langues { grid-area: 6 / 1 / 7 / 2; }
+    .reseaux { grid-area: 7 / 1 / 8 / 2; }
+    .intro { grid-area: 3 / 2 / 4 / 5; }
+    .experiences { grid-area: 4 / 2 / 6 / 5; }
+    .formations { grid-area: 6 / 2 / 8 / 5; }
+
+
 /* Paramètres bloc Nom */
 .paper>.identite>.nom {
     text-align: center;
@@ -37,6 +58,7 @@
     font-size: 3em;
     margin-bottom: -40px;
 }
+
 
 /* Paramètres bloc Poste */
 .paper>.titre>.poste{
@@ -50,7 +72,7 @@
 
 
 /* Lignes bloc gauche */
-.paper>.profil, .paper>.competences, .paper>.interets, .paper>.langues{
+.paper>.profil, .paper>.competences, .paper>.langues, .paper>.reseaux{
     margin-right: 20px;
 }
 
@@ -75,6 +97,7 @@
     border-bottom: 2px gray solid;
 }
 
+
 /* Paramètres bloc Intro */
 .paper>.intro>header {
     text-transform: uppercase;
@@ -82,6 +105,10 @@
     font-size: 1.2em;
     border-bottom: 2px gray solid;
 }
+.paper>.intro {
+    text-align: justify;
+}
+
 
 /* Paramètres bloc Experiences */
 .paper>.experiences>header {
@@ -95,14 +122,14 @@
     display: inline-block;
     width: 100px;
 }
-
 .paper>.experiences>div>.experience>.titre {
     font-weight: bold;
     font-size: 1.1em;
     display: inline-block;
 }
-.paper>.experiences>.experience>.description {
+.paper>.experiences>div>.experience>.description {
     margin-bottom: 1em;
+    text-align: justify;
 }
 
 
@@ -123,9 +150,11 @@
     font-size: 1.1em;
     display: inline-block;
 }
-.paper>.formations>.formation>.description {
+.paper>.formations>div>.formation>.description {
     margin-bottom: 1em;
+    text-align: justify;
 }
+
 
 /* Paramètres bloc competences */
 .paper>.competences>header {
@@ -156,6 +185,7 @@
     display: inline;
 }
 
+
 /* Paramètres bloc reseaux */
 .paper>.reseaux>header {
     text-transform: uppercase;
@@ -164,42 +194,3 @@
     border-bottom: 2px gray solid;
 }
 
-
-/* Ratio éléments*/
-
-.paper>.identite{
-    flex-basis: 100%;
-    order: 0;
-}
-.paper>.titre{
-    flex-basis: 100%;
-    order: 1;
-}
-.paper>.profil{
-    flex-basis: 20%;
-    order: 2;
-}
-.paper>.intro{
-    flex-basis: 70%;
-    order: 3;
-}
-.paper>.competences{
-    flex-basis: 20%;
-    order: 4;
-}
-.paper>.experiences{
-    flex-basis: 70%;
-    order: 5;
-}
-.paper>.langues{
-    flex-basis: 20%;
-    order: 6;
-}
-/* .paper>.reseaux{
-    flex-basis: 20%;
-    order: 2;
-} */
-.paper>.formations{
-    flex-basis: 70%;
-    order: 7;
-}
