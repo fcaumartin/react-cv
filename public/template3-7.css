@@ -85,7 +85,7 @@
 
 
 /* Mise en page descriptions */
-.paper>.experiences>.experience>.description, .paper>.formations>.formation>.description {
+.paper>.experiences>div>.experience>.description, .paper>.formations>div>.formation>.description {
     margin-bottom: 1em;
     text-align: justify;
 }
@@ -93,7 +93,7 @@
 
 /* Marge blocs gauche */
 .paper>.experiences, .paper>.formations, .paper>.identite, .paper>.titre, .paper>.intro {
-    padding-left: 15px;
+    padding: 0px 15px;
 }
 
 /* Paramètres bloc nom */
@@ -105,15 +105,31 @@
 }
 
 /* Paramètres bloc poste */
-.paper>.titre>.poste{
+.paper>.titre>.poste {
     font-size: 1.5em;
     text-transform: uppercase;
+}
+.paper>.titre {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-top: -2px;
 }
 
 
 /* Mise en page texte */
 .paper>.intro {
     margin-top: 10px;
+    text-align: justify;
+}
+
+
+/* Justification texte */
+.paper>.intro>.text {
+    text-align: justify;
+}
+/* Justification descriptions */
+.paper>.experiences>div>.experience>.description, .paper>.formations>div>.formation>.description {
+    margin-bottom: 1em;
     text-align: justify;
 }
 

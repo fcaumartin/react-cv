@@ -10,6 +10,7 @@
     transform: scale(0.8);
 }
 
+
 /* Paramètres bloc Nom */
 .paper>.identite>.nom {
     text-align: center;
@@ -17,17 +18,20 @@
     font-size: 3em;
 }
 
+
 /* Paramètres bloc Poste */
 .paper>.titre>.poste {
     font-size: 1.5em;
     text-transform: uppercase;
     color: gray;
+    height: max-content;
 }
 
 
 /* Paramètres bloc Contact */
 .paper>.profil {
     background-color: #eeeeee;
+    height: fit-content;
 }
 
 
@@ -45,7 +49,7 @@
     text-align: justify;
 }
 /* Justification descriptions */
-.paper>.experiences>.experience>.description, .paper>.formations>.formation>.description {
+.paper>.experiences>div>.experience>.description, .paper>.formations>div>.formation>.description {
     margin-bottom: 1em;
     text-align: justify;
 }
@@ -72,9 +76,6 @@
     font-size: 1.1em;
     display: inline;
 }
-.paper>.experiences>.experience>.description {
-    margin-bottom: 1em;
-}
 
 
 /* Paramètres bloc Formations */
@@ -93,9 +94,6 @@
     font-size: 1.1em;
     display: inline;
 }
-.paper>.formations>.formation>.description {
-    margin-bottom: 1em;
-}
 
 
 /* Paramètres bloc Competences */
@@ -111,6 +109,7 @@
     display: inline;
 }
 
+
 /* Paramètres bloc langues */
 .paper>.langues>header {
     text-transform: uppercase;
@@ -123,6 +122,7 @@
 .paper>.langues>div>.langue>.niveau {
     display: inline;
 }
+
 
 /* Paramètres bloc reseaux */
 .paper>.reseaux>header {
