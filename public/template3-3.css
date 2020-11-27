@@ -1,0 +1,205 @@
+/* @font-face {
+    font-family: "FontFree";
+    src: local("/fonts/fa-regular-400.eot")format("eot"),
+    local("/fonts/fa-regular-400.svg")format("svg"),
+    local("/fonts/fa-regular-400.ttf")format("ttf"),
+    local("/fonts/fa-regular-400.woff")format("woff"),
+    local("/fonts/fa-regular-400.woff2")format("woff2");
+   }
+   .icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+   .profil::before {
+    font-family: "FontFree"; content: "\f007";
+  } */
+
+
+/* Habillage layout */
+.paper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    border: 2px gray solid;
+    box-shadow: 10px 10px 10px gray;
+    width: 21cm;
+    min-height: 29.7cm;
+    transform: scale(0.8);
+}
+
+/* Paramètres bloc Nom */
+.paper>.identite>.nom {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3em;
+    margin-bottom: -40px;
+}
+
+/* Paramètres bloc Poste */
+.paper>.titre>.poste{
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    color: gray;
+    border-bottom: 10px lightgray solid;
+    padding-bottom: 10px;
+}
+
+
+/* Lignes bloc gauche */
+.paper>.profil, .paper>.competences, .paper>.interets, .paper>.langues{
+    margin-right: 20px;
+}
+
+
+/* Lignes bloc droit */
+.paper>.intro, .paper>.experiences, .paper>.formations{
+    border-left: 2px gray solid;
+}
+
+
+/* Spacing droit */
+.paper>.intro>header, .paper>.intro>div, .paper>.experiences>header, .paper>.experiences>div>div, .paper>.formations>header, .paper>.formations>div>div {
+    margin-left: 20px;
+}
+
+
+/* Paramètres bloc Contact */
+.paper>.profil>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 2px gray solid;
+}
+
+/* Paramètres bloc Intro */
+.paper>.intro>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 2px gray solid;
+}
+
+/* Paramètres bloc Experiences */
+.paper>.experiences>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 2px gray solid;
+}
+.paper>.experiences>div>.experience>.date-debut, .paper>.experiences>div>.experience>.date-fin {
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+}
+
+.paper>.experiences>div>.experience>.titre {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline-block;
+}
+.paper>.experiences>.experience>.description {
+    margin-bottom: 1em;
+}
+
+
+/* Paramètres bloc Formations */
+.paper>.formations>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 2px gray solid;
+}
+.paper>.formations>div>.formation>.date-debut, .paper>.formations>div>.formation>.date-fin {
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+}
+.paper>.formations>div>.formation>.titre {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline-block;
+}
+.paper>.formations>.formation>.description {
+    margin-bottom: 1em;
+}
+
+/* Paramètres bloc competences */
+.paper>.competences>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 2px gray solid;
+}
+.paper>.competences>div>.competence>.libelle {
+    display: inline;
+}
+.paper>.competences>div>.competence>.niveau {
+    display: inline;
+}
+
+
+/* Paramètres bloc langues */
+.paper>.langues>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 2px gray solid;
+}
+.paper>.langues>div>.langue>.libelle {
+    display: inline;
+}
+.paper>.langues>div>.langue>.niveau {
+    display: inline;
+}
+
+/* Paramètres bloc reseaux */
+.paper>.reseaux>header {
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1.2em;
+    border-bottom: 2px gray solid;
+}
+
+
+/* Ratio éléments*/
+
+.paper>.identite{
+    flex-basis: 100%;
+    order: 0;
+}
+.paper>.titre{
+    flex-basis: 100%;
+    order: 1;
+}
+.paper>.profil{
+    flex-basis: 20%;
+    order: 2;
+}
+.paper>.intro{
+    flex-basis: 70%;
+    order: 3;
+}
+.paper>.competences{
+    flex-basis: 20%;
+    order: 4;
+}
+.paper>.experiences{
+    flex-basis: 70%;
+    order: 5;
+}
+.paper>.langues{
+    flex-basis: 20%;
+    order: 6;
+}
+/* .paper>.reseaux{
+    flex-basis: 20%;
+    order: 2;
+} */
+.paper>.formations{
+    flex-basis: 70%;
+    order: 7;
+}
