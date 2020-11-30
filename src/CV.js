@@ -157,7 +157,7 @@ class CV extends React.Component {
     }
     render() {
         return (
-            <div className="row">
+            <div className="row no-print">
                 <div className="col-6 no-print">
                     <Dialog />
                 </div>
@@ -380,7 +380,7 @@ class CV extends React.Component {
                                 }
                             </div>
                         </section>
-                        <section className="reseaux">
+                        <section className="reseaux .no-print">
                             <header>Réseaux</header>
                             <div >
                                 {
@@ -388,7 +388,7 @@ class CV extends React.Component {
                                         <div className="reseau"  key={index}>
                                             <div className="libelle">{reseau.type}</div>
                                             <div className="libelle">{reseau.url}</div>
-                                            <div className="niveau">
+                                            <div className="niveau no-print">
                                                 <a href="{reseau.url}">{reseau.type}</a>
                                             </div>
                                         </div>
