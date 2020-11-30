@@ -7,7 +7,11 @@ class FormFormation extends React.Component {
         //console.log(this);
         let formation = {
             dateDebut: this.refs.dateDebut.value,
-            description: this.refs.description.value
+            dateFin: this.refs.dateFin.value,
+            ecole: this.refs.ecole.value,
+            description: this.refs.description.value,
+            diplome: this.refs.diplome.value,
+            niveau: this.refs.niveau.value
         };
         this.props.onChange(formation);
     }
@@ -48,10 +52,10 @@ class FormFormation extends React.Component {
                         <Col>
                             <Form.Control
                                 as="textarea"
-                                value={this.props.value.desciption}
+                                value={this.props.value.description}
                                 onChange={(evt) => this.handleChange(evt)}
-                                ref="desciption" 
-                                placeholder="Desciption"
+                                ref="description" 
+                                placeholder="Description"
                             />
                         </Col>
                     </Form.Row>
