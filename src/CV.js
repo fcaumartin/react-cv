@@ -361,6 +361,7 @@ class CV extends React.Component {
                                         <div className="competence"  key={index}>
                                             <div className="libelle">{competence.libelle}</div>
                                             <div className={"niveau niveau-" + competence.niveau}>{competence.niveau}</div>
+                                            <progress max="5" value={competence.niveau}></progress>
                                         </div>
                                     )
                                 }
