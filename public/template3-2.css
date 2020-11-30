@@ -13,7 +13,6 @@
 
 /* Paramètres bloc Nom */
 .paper>.identite>.nom {
-    text-align: center;
     text-transform: uppercase;
     font-size: 3em;
 }
