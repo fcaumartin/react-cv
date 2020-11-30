@@ -18,3 +18,7 @@
     }
     
 }
+
+.rbt-menu {
+    overflow-x: hidden !important;
+}

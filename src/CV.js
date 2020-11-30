@@ -25,7 +25,8 @@ class CV extends React.Component {
                 phone: "+33 6 58 96 52 14",
                 email: "jodo@yahoo.com",
                 titre: "Développeur Web",
-                description: "bla bla bla"
+                description: "bla bla bla",
+                metier: ""
             },
             experiences: [
                 { 
@@ -179,7 +180,7 @@ class CV extends React.Component {
                     Cliquez sur les onglets ci-dessous pour compléter les différentes rubriques de votre CV
 
                         <div className="accordion mt-5" id="accordion1">
-                            <div className="card">
+                            <div className="card" style={{overflow: 'visible'}}>
                                 <div className="card-header" id="heading1">
                                     <h2 className="mb-0">
                                         <button className="btn btn-block btn-sm text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse1" >
@@ -246,6 +247,7 @@ class CV extends React.Component {
                                     <div className="card-body">
                                     <FormCompetences
                                         value={this.state.competences}
+                                        metier={this.state.profil.metier}
                                         addCompetence={(evt) => this.handleAddCompetence(evt)}
                                         delCompetence={(i) => this.handleDelCompetence(i)}
                                         changeCompetence={(i, exp) => this.handleChangeCompetence(i, exp)}
