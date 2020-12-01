@@ -30,6 +30,9 @@ class FormCompetence extends React.Component {
                                 value={this.props.value.niveau}
                                 onChange={(evt) => this.handleChange(evt)}
                                 ref="niveau"
+                                type="number"
+                                min="1"
+                                max="5"
                                 placeholder="Niveau"
                             />
                         </Col>
