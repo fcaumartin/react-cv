@@ -53,23 +53,23 @@
 <script>
   //console.log("start");
   window.addEventListener("resize", function() {
-      //console.log("resize");
-      let elt = document.querySelector(".paper");
-      let l1 = elt.clientWidth;
-      let h1 = elt.clientHeight;
-      let largeur = document.querySelector(".paper-container").clientWidth;
-      //console.dir(elt);
-      let ratio = largeur/elt.clientWidth;
-      ratio = ratio * 0.8;
-      let nouvelle_largeur = elt.clientWidth * ratio;
-      let l2 = elt.clientWidth*ratio;
-      let h2 = elt.clientHeight*ratio;
-      elt.style.transform = "scale("+ratio+")";
-      let delta = (l1-l2)/2;
-      let deltaH = (h1-h2)/2;
-      elt.style.marginLeft = "-" + delta + "px";
-      elt.style.marginTop = "-" + deltaH + "px";
-      //console.dir(delta);
+      // //console.log("resize");
+      // let elt = document.querySelector(".paper");
+      // let l1 = elt.clientWidth;
+      // let h1 = elt.clientHeight;
+      // let largeur = document.querySelector(".paper-container").clientWidth;
+      // //console.dir(elt);
+      // let ratio = largeur/elt.clientWidth;
+      // ratio = ratio * 0.8;
+      // let nouvelle_largeur = elt.clientWidth * ratio;
+      // let l2 = elt.clientWidth*ratio;
+      // let h2 = elt.clientHeight*ratio;
+      // elt.style.transform = "scale("+ratio+")";
+      // let delta = (l1-l2)/2;
+      // let deltaH = (h1-h2)/2;
+      // elt.style.marginLeft = "-" + delta + "px";
+      // elt.style.marginTop = "-" + deltaH + "px";
+      // //console.dir(delta);
   });
 
   window.dispatchEvent(new Event('resize'));

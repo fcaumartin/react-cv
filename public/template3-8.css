@@ -7,7 +7,6 @@
 
 /* Habillage layout */
 .paper {
-    /* font-family: "font1"; */
     border: 2px gray solid;
     box-shadow: 10px 10px 10px gray;
     width: 21cm;
@@ -36,6 +35,34 @@
     .experiences { grid-area: 3 / 2 / 5 / 4; }
     .formations { grid-area: 5 / 2 / 7 / 4; }
     .photo { grid-area: 7 / 3 / 8 / 4; }
+
+
+/********** Conditions d'impressions **********/
+
+@media print {
+    /* Sélection des zones */ 
+    body * { 
+        visibility: hidden; 
+    }
+    .no-print { 
+        display: none; 
+    }
+    .paper { 
+        visibility: visible; display: grid; 
+        margin-top: 0px !important; margin-left: 0px !important; transform: scale(1) !important;
+        border: 0px;
+        width: 100%;
+    }
+    .paper * { 
+        visibility: visible; 
+    }
+    
+    /* Forçage impression background */ 
+    * { -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+        color-adjust: exact !important;                 /*Firefox*/
+    }
+    
+    }
 
 
 /* .paper>.identite>.nom:before {
@@ -236,4 +263,7 @@
     font-size: 1.1em;
     display: inline;
 }
+
+
+
 

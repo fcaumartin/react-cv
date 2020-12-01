@@ -1,3 +1,4 @@
+
 /* Habillage layout */
 .paper {
     display: flex;
@@ -10,6 +11,37 @@
     transform: scale(0.8);
     word-break: break-all;
 }
+
+
+/********** Conditions d'impressions **********/
+
+@media print {
+/* Sélection des zones */ 
+body * { 
+    visibility: hidden; 
+}
+.no-print { 
+    display: none; 
+}
+.paper { 
+    visibility: visible; display: flex; 
+    margin-top: 0px !important; margin-left: 0px !important; transform: scale(1) !important;
+    border: 0px;
+    width: 100%;
+}
+
+.paper * { 
+    visibility: visible; 
+}
+
+/* Forçage impression background */ 
+* { -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+    color-adjust: exact !important;                 /*Firefox*/
+}
+
+}
+
+
 
 
 /* Paramètres bloc Nom */
@@ -47,7 +79,6 @@
 /* Justification texte */
 .paper>.intro>.text {
     text-align: justify;
-    word-break: break-all;
 }
 /* Justification descriptions */
 .paper>.experiences>div>.experience>.description, .paper>.formations>div>.formation>.description {

@@ -88,9 +88,13 @@
 }
 
 
-.paper>.intro>header, .paper>.intro>div, .paper>.experiences>header, .paper>.experiences>div, .paper>.formations>header, .paper>.formations>div {
-    margin-left: 20px;
+.paper>.experiences, .paper>.formations, .paper>.identite, .paper>.titre, .paper>.intro {
+    padding: 0px 15px;
 }
+
+/* .paper>.intro>header, .paper>.intro>div, .paper>.experiences>header, .paper>.experiences>div, .paper>.formations>header, .paper>.formations>div {
+    margin-left: 20px;
+} */
 
 .paper>.profil>header {
     text-transform: uppercase;
