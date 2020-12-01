@@ -14,6 +14,8 @@ function Templates() {
               <Dropdown.Item eventKey="/template3-4.css" onSelect={ (eventKey) => { setStyle(eventKey); }}>Modèle 4</Dropdown.Item>
               <Dropdown.Item eventKey="/template3-7.css" onSelect={ (eventKey) => { setStyle(eventKey); }}>Modèle 5</Dropdown.Item>
               <Dropdown.Item eventKey="/template3-6.css" onSelect={ (eventKey) => { setStyle(eventKey); }}>Modèle 6</Dropdown.Item>
+              <Dropdown.Item eventKey="/template3-1.css" onSelect={ (eventKey) => { setStyle(eventKey); }}>Modèle 7</Dropdown.Item>
+              <Dropdown.Item eventKey="/template3-8.css" onSelect={ (eventKey) => { setStyle(eventKey); }}>Modèle 8</Dropdown.Item>
           </DropdownButton>
         </span>
     );
