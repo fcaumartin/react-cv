@@ -13,6 +13,7 @@
     width: 21cm;
     min-height: 29.7cm;
     transform: scale(0.8);
+    word-break: break-all;
 }
 
 
@@ -124,7 +125,16 @@
     font-weight: bold;
     border-bottom: 1.5px darkgray solid;
 }
-
+.paper>.experiences>div>.experience>.date-debut {
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+}
+.paper>.experiences>div>.experience>.titre, .paper>.experiences>div>.experience>.date-fin {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline;
+}
 
 /* Paramètres bloc Formations */
 .paper>.formations>header {
@@ -135,7 +145,16 @@
     font-weight: bold;
     border-bottom: 1.5px darkgray solid;
 }
-
+.paper>.formations>div>.formation>.date-debut, .paper>.formations>div>.formation>.date-fin {
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+}
+.paper>.formations>div>.formation>.titre {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline;
+}
 
 /* Paramètres bloc Compétences */
 .paper>.competences>header {
