@@ -1,52 +1,60 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+// import axios from 'axios';
+import fetch from 'isomorphic-fetch';
 
-import { Col, Form, Button } from 'react-bootstrap';
+import { Col, Form } from 'react-bootstrap';
+import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 
-class FormProfil extends React.Component {
+const FormProfil = (props) => {
 
-    handleUploadPhoto() {
-        console.log("send");
-        axios.post("https://127.0.0.1:8000/api/test", {})
-        .catch(function (error) {
-            console.log("Un problème est survenu... ");
-            console.log(error);
-            if (error.response) {
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-              }
-          })
-        .then( (res) => {
-            console.log("return");
-            console.log(res);
+    const [metier, setMetier] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [options, setOptions] = useState([]);
+
+    
+
+    const handleSearch = (query) => {
+        setIsLoading( true );
+        // axios.get("https://127.0.0.1:8000/api/metiers?libelle=" + query)
+        // .then( (data) => {
+        //     console.log(data);
+        //     setIsLoading( false );
+        //     setOptions( data.data );
+        // });
+        fetch("https://test.candidatheque.com/api/metiers?libelle=" + query)
+        .then((resp) => resp.json())
+        .then((items) => {
+            console.log(items);
+            setOptions(items);
+            setIsLoading(false);
         });
         
+        
     }
+    
 
-    render() {
         return (
             <Form>
                 <Form.Row className="mb-2">
                     <Col className="col-4">
                         <Form.Control
-                            value={this.props.value.nom}
-                            onChange={() => { 
-                                this.props.value.nom=this.refs.nomTextInput.value; 
-                                this.props.onProfilChange(this.props.value)
+                            value={props.value.nom}
+                            onChange={(evt) => { 
+                                props.value.nom=evt.target.value; 
+                                props.onProfilChange(props.value)
                             }}
-                            ref="nomTextInput" placeholder="Nom"
+                            placeholder="Nom"
                             
                         />
                     </Col>
                     <Col className="col-4">
                         <Form.Control
-                            value={this.props.value.prenom}
-                            onChange={() => { 
-                                this.props.value.prenom=this.refs.prenomTextInput.value; 
-                                this.props.onProfilChange(this.props.value)
+                            value={props.value.prenom}
+                            onChange={(evt) => { 
+                                props.value.prenom=evt.target.value; 
+                                props.onProfilChange(props.value)
                             }}
-                            ref="prenomTextInput" placeholder="Prénom"
+                            placeholder="Prénom"
                         />
                     </Col>
                     <Col className="col-4">
@@ -57,7 +65,7 @@ class FormProfil extends React.Component {
                                 custom
                                 // value={this.props.value.logo}
                                 // onChange={(evt) => this.handleChange(evt)}
-                                ref="logo"
+                                
                                 placeholder="Logo"
                                 onChange={ (elt) => { this.handleUploadPhoto(elt) } }
                             />
@@ -66,49 +74,68 @@ class FormProfil extends React.Component {
                 <Form.Row className="mb-2">  
                     <Col>
                         <Form.Control
-                            value={this.props.value.adresse}
-                            onChange={() => { 
-                                this.props.value.adresse=this.refs.adresseTextInput.value; 
-                                this.props.onProfilChange(this.props.value)
+                            value={props.value.adresse}
+                            onChange={(evt) => { 
+                                props.value.adresse=evt.target.value; 
+                                props.onProfilChange(props.value)
                             }}
-                            ref="adresseTextInput" placeholder="Adresse"
+                            placeholder="Adresse"
                         />
                     </Col>
                     <Col>
                         <Form.Control
-                            value={this.props.value.ville}
-                            onChange={() => { 
-                                this.props.value.ville=this.refs.villeTextInput.value; 
-                                this.props.onProfilChange(this.props.value)
+                            value={props.value.ville}
+                            onChange={(evt) => { 
+                                props.value.ville=evt.target.value; 
+                                props.onProfilChange(props.value)
                             }}
-                            ref="villeTextInput" placeholder="Ville"
+                            placeholder="Ville"
                         />
                     </Col>
                 </Form.Row>
                 <Form.Row>  
                     <Col>
-                        <Form.Control  className="mb-2"
+                        {/* <Form.Control  className="mb-2"
                             value={this.props.value.titre}
                             onChange={() => { 
                                 this.props.value.titre=this.refs.titreTextInput.value; 
                                 this.props.onProfilChange(this.props.value)
                             }}
                             ref="titreTextInput" placeholder="Titre"
+                        /> */}
+                        <AsyncTypeahead   
+                            // positionFixed={true}
+                            className="mb-2"
+                            isLoading={isLoading}
+                            id="654"
+                            labelKey="libelle"
+                            onChange={setMetier}
+                            options={options}
+                            placeholder="Métier..."
+                            selected={metier}
+                            minLength={0}
+                            onBlur={ (evt) => { 
+                                props.value.metier=evt.target.value; 
+                                props.onProfilChange(props.value)
+                            } }
+                            onSearch={ handleSearch }
+                            renderMenuItemChildren={(option, props) => (
+                                <span>{option.libelle}</span>
+                            )}
                         />
                         <Form.Control
                             as="textarea"
-                            value={this.props.value.description}
-                            onChange={() => { 
-                                this.props.value.description=this.refs.descriptionTextInput.value; 
-                                this.props.onProfilChange(this.props.value)
+                            value={props.value.description}
+                            onChange={(evt) => { 
+                                props.value.description=evt.target.value; 
+                                props.onProfilChange(props.value)
                             }}
-                            ref="descriptionTextInput" placeholder="Desciption"
+                            placeholder="Desciption"
                         />
                     </Col>
                 </Form.Row>
             </Form>
         );
-    }
 }
 
 export default FormProfil;

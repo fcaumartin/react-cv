@@ -9,3 +9,13 @@
     transform: scale(1);
     margin-bottom: 20px;
 }
+
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+.rbt-menu {
+    overflow-x: hidden !important;
+}
