@@ -157,7 +157,7 @@ class CV extends React.Component {
     }
     render() {
         return (
-            <div className="row no-print">
+            <div className="row">
                 <div className="col-6 no-print">
                     <Dialog />
                 </div>
@@ -296,7 +296,7 @@ class CV extends React.Component {
                     
                 </div>
 
-                <div  className="col-sm-6 paper-container">
+                <div  className="paper-container">
 
                     <div className="paper">
                         <section className="identite">

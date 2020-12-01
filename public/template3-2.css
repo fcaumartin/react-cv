@@ -8,6 +8,7 @@
     width: 21cm;
     min-height: 29.7cm;
     transform: scale(0.8);
+    word-break: break-all;
 }
 
 
@@ -46,6 +47,7 @@
 /* Justification texte */
 .paper>.intro>.text {
     text-align: justify;
+    word-break: break-all;
 }
 /* Justification descriptions */
 .paper>.experiences>div>.experience>.description, .paper>.formations>div>.formation>.description {

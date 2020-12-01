@@ -7,13 +7,13 @@
     border: 2px gray solid;
     box-shadow: 10px 10px 10px gray;
     width: 21cm;
-    height: 29.7cm;
+    min-height: 29.7cm;
     transform: scale(1);
     margin-bottom: 20px;
 }
 
-@media print {
+/* @media print {
     .no-print {
         display: none;
     } 
-}
+} */
