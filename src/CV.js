@@ -1,11 +1,11 @@
 import React from 'react';
-import { Col, Form, Button } from 'react-bootstrap';
-import axios from 'axios';
+import Button from '@material-ui/core/Button';
+// import axios from 'axios';
 
 import FormExperiences from './FormExperiences.js';
 import FormFormations from './FormFormations.js';
 import FormProfil from './FormProfil.js';
-import Dialog from './Dialog.js';
+import Modal from './Modal.js';
 import Templates from './Templates.js';
 import FormCompetences from './FormCompetences.js';
 import FormLangues from './FormLangues.js';
@@ -163,7 +163,7 @@ class CV extends React.Component {
         return (
             <div className="row">
                 <div className="col-6 no-print">
-                    <Dialog />
+                    <Modal />
                 </div>
                 <div className="col-6 text-right no-print">
                     <Templates />
@@ -175,8 +175,8 @@ class CV extends React.Component {
                             <h1>Module de création de CV.</h1>
                         </div>
                         <div className="col-3 text-right">
-                        <Button variant="secondary" onClick={ () => { this.handleSaveLocal(); } }>Save</Button>&nbsp;
-                        <Button variant="secondary" onClick={ () => { this.handleLoadLocal(); } }>Load</Button>
+                        <Button variant="contained" color="primary" onClick={ () => { this.handleSaveLocal(); } }>Save</Button>&nbsp;
+                        <Button variant="contained" color="primary"onClick={ () => { this.handleLoadLocal(); } }>Load</Button>
                         </div>
                     </div>
                     

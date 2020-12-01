@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 // import fetch from 'isomorphic-fetch';
 
-import { Col, Form } from 'react-bootstrap';
-import { AsyncTypeahead } from 'react-bootstrap-typeahead';
+// import { Col, Form } from 'react-bootstrap';
+// import { AsyncTypeahead } from 'react-bootstrap-typeahead';
+import {AutoComplete, TextField} from '@material-ui/core';
 
 const FormProfil = (props) => {
 
@@ -34,10 +35,9 @@ const FormProfil = (props) => {
     
 
         return (
-            <Form>
-                <Form.Row className="mb-2">
-                    <Col className="col-4">
-                        <Form.Control
+            <form className={classes.root} noValidate autoComplete="off">
+                <div>
+                        <TextField
                             value={props.value.nom}
                             onChange={(evt) => { 
                                 props.value.nom=evt.target.value; 
@@ -46,9 +46,8 @@ const FormProfil = (props) => {
                             placeholder="Nom"
                             
                         />
-                    </Col>
-                    <Col className="col-4">
-                        <Form.Control
+                    
+                        <TextField
                             value={props.value.prenom}
                             onChange={(evt) => { 
                                 props.value.prenom=evt.target.value; 
@@ -56,9 +55,8 @@ const FormProfil = (props) => {
                             }}
                             placeholder="Prénom"
                         />
-                    </Col>
-                    <Col className="col-4">
-                        <Form.File 
+                    </div>
+                        {/* <Form.File 
                                 id="custom-file"
                                 label="Photo"
                                 data-browse="Choisir"
@@ -68,12 +66,10 @@ const FormProfil = (props) => {
                                 
                                 placeholder="Logo"
                                 onChange={ (elt) => { this.handleUploadPhoto(elt) } }
-                            />
-                    </Col>
-                </Form.Row>
-                <Form.Row className="mb-2">  
-                    <Col>
-                        <Form.Control
+                            /> */}
+                    
+                <div>
+                        <TextField
                             value={props.value.adresse}
                             onChange={(evt) => { 
                                 props.value.adresse=evt.target.value; 
@@ -81,9 +77,8 @@ const FormProfil = (props) => {
                             }}
                             placeholder="Adresse"
                         />
-                    </Col>
-                    <Col>
-                        <Form.Control
+                   
+                        <TextField
                             value={props.value.ville}
                             onChange={(evt) => { 
                                 props.value.ville=evt.target.value; 
@@ -91,8 +86,7 @@ const FormProfil = (props) => {
                             }}
                             placeholder="Ville"
                         />
-                    </Col>
-                </Form.Row>
+                    </div>
                 <Form.Row>  
                     <Col>
                         {/* <Form.Control  className="mb-2"
@@ -103,7 +97,7 @@ const FormProfil = (props) => {
                             }}
                             ref="titreTextInput" placeholder="Titre"
                         /> */}
-                        <AsyncTypeahead   
+                        {/* <AsyncTypeahead   
                             // positionFixed={true}
                             className="mb-2"
                             isLoading={isLoading}
@@ -122,6 +116,13 @@ const FormProfil = (props) => {
                             renderMenuItemChildren={(option, props) => (
                                 <span>{option.libelle}</span>
                             )}
+                        /> */}
+                        <Autocomplete
+                            id="combo-box-demo"
+                            options={top100Films}
+                            getOptionLabel={(option) => option.title}
+                            style={{ width: 300 }}
+                            renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
                         />
                         <Form.Control
                             as="textarea"
@@ -134,7 +135,7 @@ const FormProfil = (props) => {
                         />
                     </Col>
                 </Form.Row>
-            </Form>
+            </form>
         );
 }
 
