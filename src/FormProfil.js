@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
+import {AutoComplete, TextField} from '@material-ui/core';
+import { Autocomplete } from '@material-ui/lab';
+
 import axios from 'axios';
 // import fetch from 'isomorphic-fetch';
 
 // import { Col, Form } from 'react-bootstrap';
 // import { AsyncTypeahead } from 'react-bootstrap-typeahead';
-import {AutoComplete, TextField} from '@material-ui/core';
 
 const FormProfil = (props) => {
 
+    const [open, setOpen] = React.useState(false);
     const [metier, setMetier] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [options, setOptions] = useState([]);
+
+    const loading = open && options.length === 0;
 
     
 
@@ -29,13 +34,22 @@ const FormProfil = (props) => {
         //     setOptions(items);
         //     setIsLoading(false);
         // });
-        
-        
+    }
+    
+    const handleCherche = (evt, callback, rea) => {
+        console.log(evt);
+        callback();
+        // axios.get("https://test.candidatheque.com/api/metiers?libelle=" + val)
+        // .then( (data) => {
+        //     console.log(data);
+        //     setIsLoading( false );
+        //     setOptions( data.data );
+        // });
     }
     
 
         return (
-            <form className={classes.root} noValidate autoComplete="off">
+            <form  noValidate autoComplete="off">
                 <div>
                         <TextField
                             value={props.value.nom}
@@ -87,8 +101,7 @@ const FormProfil = (props) => {
                             placeholder="Ville"
                         />
                     </div>
-                <Form.Row>  
-                    <Col>
+                <div>
                         {/* <Form.Control  className="mb-2"
                             value={this.props.value.titre}
                             onChange={() => { 
@@ -119,12 +132,18 @@ const FormProfil = (props) => {
                         /> */}
                         <Autocomplete
                             id="combo-box-demo"
-                            options={top100Films}
-                            getOptionLabel={(option) => option.title}
-                            style={{ width: 300 }}
+                            open={open}
+                            onOpen={() => { setOpen(true); }}
+                            onClose={() => { setOpen(false); }}
+                            getOptionSelected={(option, value) => option.name === value.name}
+                            loading={loading}
+                            options={options}
+                            onInputChange={handleCherche}
+                            getOptionLabel={(option) => option.libelle}
+                            // style={{ width: 300 }}
                             renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
                         />
-                        <Form.Control
+                        <TextField
                             as="textarea"
                             value={props.value.description}
                             onChange={(evt) => { 
@@ -133,8 +152,7 @@ const FormProfil = (props) => {
                             }}
                             placeholder="Desciption"
                         />
-                    </Col>
-                </Form.Row>
+                    </div>
             </form>
         );
 }
