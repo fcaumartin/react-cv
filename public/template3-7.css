@@ -150,7 +150,7 @@
 .paper>.experiences>div>.experience>.date-debut {
     font-weight: bold;
     display: inline-block;
-    width: 100px;
+    width: 120px;
 }
 .paper>.experiences>div>.experience>.titre, .paper>.experiences>div>.experience>.date-fin {
     font-weight: bold;
@@ -169,7 +169,7 @@
 .paper>.formations>div>.formation>.date-debut, .paper>.formations>div>.formation>.date-fin {
     font-weight: bold;
     display: inline-block;
-    width: 100px;
+    width: 120px;
 }
 .paper>.formations>div>.formation>.titre {
     font-weight: bold;

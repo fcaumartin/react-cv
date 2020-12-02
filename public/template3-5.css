@@ -161,6 +161,7 @@ header, .paper>.identite {
 .paper>.experiences>div>.experience>.date-debut {
     text-transform: capitalize;
     font-weight: 600;
+    width: 120px;
 }
 .paper>.experiences>div>.experience>.date-fin {
     font-weight: 600;
@@ -202,22 +203,10 @@ header, .paper>.identite {
 .paper>.formations>div>.formation>.date-debut {
     text-transform: capitalize;
     font-weight: 600;
+    width: 120px;
 }
 .paper>.formations>div>.formation>.date-fin {
     font-weight: 600;
-}
-.formation.org {
-    overflow: auto;
-}
-.formation.org .entry {
-    float: left;
-    width: 100px;
-}
-.formation.org.n2 .entry:nth-child(2n+1) {
-    clear: left;
-}
-.formation.org.n2 .entry:nth-child(4n+1) {
-    clear: left;
 }
 
 
