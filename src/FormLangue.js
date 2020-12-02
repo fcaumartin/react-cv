@@ -26,6 +26,7 @@ class FormLangue extends React.Component {
                             />
                         </Col>
                         <Col xs={2}>
+                            {/* technique, notion, courant, bilingue */}
                             <Form.Control
                                 value={this.props.value.niveau}
                                 onChange={(evt) => this.handleChange(evt)}

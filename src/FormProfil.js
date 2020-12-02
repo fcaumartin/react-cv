@@ -4,23 +4,31 @@ import axios from 'axios';
 
 import { Col, Form } from 'react-bootstrap';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
+import AsyncSelect from 'react-select/async';
 
 const FormProfil = (props) => {
 
-    const [metier, setMetier] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [options, setOptions] = useState([]);
+    // const [rome, setRome] = useState([]);
+    // const [isLoading, setIsLoading] = useState(false);
+    // const [options, setOptions] = useState([]);
 
     
 
-    const handleSearch = (query) => {
-        setIsLoading( true );
-        axios.get("https://test.candidatheque.com/api/metiers?libelle=" + query)
-        .then( (data) => {
-            console.log(data);
-            setIsLoading( false );
-            setOptions( data.data );
-        });
+    const handleChangeMetier = (query) => {
+        
+        // console.log(query.rome);
+        //setRome(query.rome);
+
+        props.value.metier=query; 
+        props.onProfilChange(props.value)
+
+        // setIsLoading( true );
+        // axios.get("https://test.candidatheque.com/api/metiers?libelle=" + query)
+        // .then( (data) => {
+        //     console.log(data);
+        //     setIsLoading( false );
+        //     setOptions( data.data );
+        // });
         // fetch("https://test.candidatheque.com/api/metiers?libelle=" + query)
         // .then((resp) => resp.json())
         // .then((items) => {
@@ -30,6 +38,16 @@ const FormProfil = (props) => {
         // });
         
         
+    }
+
+    const loadOptions = (evt, callback) => {
+        console.log(evt);
+        
+        axios.get("https://test.candidatheque.com/api/metiers?libelle=" + evt)
+        .then( (data) => {
+            //console.log(data);
+            callback(data.data);
+        });
     }
     
 
@@ -103,7 +121,7 @@ const FormProfil = (props) => {
                             }}
                             ref="titreTextInput" placeholder="Titre"
                         /> */}
-                        <AsyncTypeahead   
+                        {/* <AsyncTypeahead   
                             // positionFixed={true}
                             className="mb-2"
                             isLoading={isLoading}
@@ -123,6 +141,15 @@ const FormProfil = (props) => {
                             renderMenuItemChildren={(option, props) => (
                                 <span>{option.libelle}</span>
                             )}
+                        /> */}
+                        <AsyncSelect
+                            className="mb-2"
+                            isClearable={true}
+                            loadOptions={loadOptions}
+                            getOptionLabel={ (met) => { return met.libelle } }
+                            // onInputChange={handleCherche}
+                            placeholder="Saisissez votre métier..."
+                            onChange={handleChangeMetier}
                         />
                         <Form.Control
                             as="textarea"
