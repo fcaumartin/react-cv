@@ -9,7 +9,7 @@
     width: 21cm;
     min-height: 29.7cm;
     transform: scale(0.8);
-    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 

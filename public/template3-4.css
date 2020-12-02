@@ -6,7 +6,7 @@
     width: 21cm;
     min-height: 29.7cm;
     transform: scale(0.8);
-    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 /* Grid principal */
@@ -33,6 +33,7 @@
     grid-template-rows: 0.8fr 0.4fr repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    overflow-wrap: anywhere;
     }
     
     .identite { grid-area: 1 / 1 / 2 / 2; }
@@ -109,11 +110,13 @@
 /* Justification texte */
 .paper>.intro>.text {
     text-align: justify;
+    /* word-break: break-all; */
 }
 /* Justification descriptions */
 .paper>.experiences>div>.experience>.description, .paper>.formations>div>.formation>.description {
     margin-bottom: 1em;
     text-align: justify;
+    /* word-break: break-all; */
 }
 
 
