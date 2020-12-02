@@ -113,6 +113,7 @@ const FormProfil = (props) => {
                             options={options}
                             placeholder="Métier..."
                             selected={metier}
+                            // value={metier}
                             minLength={3}
                             onBlur={ (evt) => { 
                                 props.value.metier=evt.target.value; 
@@ -125,6 +126,7 @@ const FormProfil = (props) => {
                         />
                         <Form.Control
                             as="textarea"
+                            rows="5"
                             value={props.value.description}
                             onChange={(evt) => { 
                                 props.value.description=evt.target.value; 

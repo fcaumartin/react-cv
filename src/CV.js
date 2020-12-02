@@ -25,16 +25,17 @@ class CV extends React.Component {
                 phone: "+33 6 58 96 52 14",
                 email: "jodo@yahoo.com",
                 titre: "Développeur Web",
-                description: "bla bla bla",
-                metier: ""
+                description: "Après une thèse de biochimie et un post-doc en chimiométrie pendant lesquels j'avais développé un certain nombre d'outils informatiques, j'ai décidé de sauter le pas et de devenir un bioinformaticien à part entière. A la suite d'une formation de bioinfo dispensée par l'institut Pasteur, j'ai intégré ce dernier comme bioinformaticien dans une unité de recherche sur l'ARN. Mon activité se répartit entre traitement et analyse de données d'une part et développement d'outils de bioinfo d'autre part.",
+                photo: "http://test.candidatheque.com/assets/photos/profil4.png",
+                metier: "Bioinformaticien / Bioinformaticienne en études, recherche et développement"
             },
             experiences: [
                 { 
                     dateDebut: "juillet 2001", 
                     dateFin: "2005", 
                     titre: "stage de découverte", 
-                    entreprise: "Aurior", 
-                    logo:"image.png", 
+                    entreprise: "TheBox", 
+                    logo:"http://test.candidatheque.com/assets/photos/logo1.png", 
                     desciption: "" 
                 }
             ],
@@ -45,7 +46,7 @@ class CV extends React.Component {
                     ecole: "Ecole de le dernière chance",
                     niveau: "6",
                     diplome: "Master Communication",
-                    description: ""
+                    description: "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions."
 
                 }
             ],
