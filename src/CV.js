@@ -382,7 +382,7 @@ class CV extends React.Component {
                                 }
                             </div>
                         </section>
-                        <section className="reseaux .no-print">
+                        <section className="reseaux">
                             <header>Réseaux</header>
                             <div >
                                 {

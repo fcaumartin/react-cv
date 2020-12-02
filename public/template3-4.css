@@ -45,6 +45,36 @@
     .experiences { grid-area: 2 / 2 / 5 / 4; }
     .formations { grid-area: 5 / 2 / 7 / 4; }
 
+
+/********** Conditions d'impressions **********/
+
+@media print {
+    /* Sélection des zones */ 
+    body * { 
+        visibility: hidden; 
+    }
+    .no-print { 
+        display: none; 
+    }
+    .paper { 
+        visibility: visible; display: grid; 
+        margin-top: 0px !important; margin-left: 0px !important; transform: scale(1) !important;
+        border: 0px;
+        width: 100vw;
+        height: ;
+    }
+    .paper * { 
+        visibility: visible; 
+    }
+    
+    /* Forçage impression background */ 
+    * { -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+        color-adjust: exact !important;                 /*Firefox*/
+    }
+    
+    }
+
+
 .paper>.identite, .paper>.titre, .paper>.profil, .paper>.competences, .paper>.langues, .paper>.reseaux{
     color: white;
     background-color: #1A409A;
