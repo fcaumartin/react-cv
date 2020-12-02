@@ -109,9 +109,12 @@ class CV extends React.Component {
         this.setState({ formations });
     }
     //////////////////////////////////////////////////////////////
-    handleAddCompetence(evt) {
+    handleAddCompetence(evt, com) {
+        console.log("+++++++++++++++++++");
+        console.log(com);
+        console.log("-----------------");
         let competences = this.state.competences;
-        competences.push({ libelle: "", niveau: ""});
+        competences.push({ libelle: com, niveau: "5"});
         this.setState({ competences });
     }
     handleDelCompetence(i) {
@@ -248,7 +251,7 @@ class CV extends React.Component {
                                     <FormCompetences
                                         value={this.state.competences}
                                         metier={this.state.profil.metier}
-                                        addCompetence={(evt) => this.handleAddCompetence(evt)}
+                                        addCompetence={(evt, com) => this.handleAddCompetence(evt, com)}
                                         delCompetence={(i) => this.handleDelCompetence(i)}
                                         changeCompetence={(i, exp) => this.handleChangeCompetence(i, exp)}
                                     />

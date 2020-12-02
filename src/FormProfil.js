@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
-import fetch from 'isomorphic-fetch';
+import axios from 'axios';
+// import fetch from 'isomorphic-fetch';
 
 import { Col, Form } from 'react-bootstrap';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
@@ -15,19 +15,19 @@ const FormProfil = (props) => {
 
     const handleSearch = (query) => {
         setIsLoading( true );
-        // axios.get("https://127.0.0.1:8000/api/metiers?libelle=" + query)
-        // .then( (data) => {
-        //     console.log(data);
-        //     setIsLoading( false );
-        //     setOptions( data.data );
-        // });
-        fetch("https://test.candidatheque.com/api/metiers?libelle=" + query)
-        .then((resp) => resp.json())
-        .then((items) => {
-            console.log(items);
-            setOptions(items);
-            setIsLoading(false);
+        axios.get("https://test.candidatheque.com/api/metiers?libelle=" + query)
+        .then( (data) => {
+            console.log(data);
+            setIsLoading( false );
+            setOptions( data.data );
         });
+        // fetch("https://test.candidatheque.com/api/metiers?libelle=" + query)
+        // .then((resp) => resp.json())
+        // .then((items) => {
+        //     console.log(items);
+        //     setOptions(items);
+        //     setIsLoading(false);
+        // });
         
         
     }
@@ -113,7 +113,7 @@ const FormProfil = (props) => {
                             options={options}
                             placeholder="Métier..."
                             selected={metier}
-                            minLength={0}
+                            minLength={3}
                             onBlur={ (evt) => { 
                                 props.value.metier=evt.target.value; 
                                 props.onProfilChange(props.value)

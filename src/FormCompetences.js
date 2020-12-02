@@ -1,27 +1,37 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react';
+import {Button, InputGroup, FormControl} from 'react-bootstrap';
 import FormCompetence from './FormCompetence.js'
 
-class FormCompetences extends React.Component {
+const FormCompetences = (props) => {
 
-    render() {
+    const [competence, setCompetence] = useState(""); 
+
         return (
             <div className="cv">
-                <Button 
-                    size="sm"
-                    onClick={(evt) => this.props.addCompetence(evt)}
-                >
-                    Ajouter une compétence
-                </Button>
+                <InputGroup className="mb-3">
+                    <FormControl
+                        placeholder="Compétence à ajouter"
+                        value={competence}
+                        onChange={ (evt) => setCompetence(evt.target.value)}
+                    />
+                    <InputGroup.Append>
+                        <Button 
+                            variant="outline-secondary"
+                            onClick={(evt) => { props.addCompetence(evt, competence); console.log("com=" + competence) } }
+                        >
+                            Ajouter
+                        </Button>
+                    </InputGroup.Append>
+                </InputGroup>
                 <hr />
                 <div >
                     {
 
-                        this.props.value.map((formation, i) =>
+                        props.value.map((formation, i) =>
                             <FormCompetence
                                 value={formation}
-                                onChange={(exp) => this.props.changeCompetence(i, exp)}
-                                delCompetence={() => this.props.delCompetence(i)}
+                                onChange={(exp) => props.changeCompetence(i, exp)}
+                                delCompetence={() => props.delCompetence(i)}
                                 key={i}
                             />
 
@@ -30,7 +40,6 @@ class FormCompetences extends React.Component {
                 </div>
             </div>
         );
-    }
 }
 
 export default FormCompetences;
