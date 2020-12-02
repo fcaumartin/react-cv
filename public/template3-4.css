@@ -62,6 +62,7 @@
         margin-top: 0px !important; margin-left: 0px !important; transform: scale(1) !important;
         border: 0px;
         width: 100vw;
+        height: 100vh;
     }
     .paper * { 
         visibility: visible; 
@@ -211,12 +212,6 @@
     font-size: 1.2em;
     border-bottom: 2px #1A409A solid;
 }
-.paper>.competences>div>.competence>.libelle {
-    display: inline;
-}
-.paper>.competences>div>.competence>.niveau {
-    display: inline;
-}
 
 
 /* Paramètres bloc langues */
@@ -238,4 +233,10 @@
     text-transform: uppercase;
     margin-top: 1em;
     font-size: 1.2em;;
+}
+
+
+/* Masquage Competence Niveau */
+.paper>.competences>div>.competence>.niveau {
+    display: none;
 }

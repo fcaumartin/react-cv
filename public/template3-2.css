@@ -67,15 +67,6 @@
 }
 
 
-/* Masquage header Intro + Profil */
-.paper>.intro>header {
-    display: none;
-}
-.paper>.profil>header {
-    display: none;
-}
-
-
 /* Justification texte */
 .paper>.intro>.text {
     text-align: justify;
@@ -133,12 +124,6 @@
     text-transform: uppercase;
     font-size: 1.4em;
     border-top: 2px gray solid;
-}
-.paper>.competences>div>.competence>.libelle {
-    display: inline;
-}
-.paper>.competences>div>.competence>.niveau {
-    display: inline;
 }
 
 
@@ -201,3 +186,16 @@
     flex-basis: 33%;
     order: 8;
 } 
+
+
+/* Masquage header Intro + Profil */
+.paper>.intro>header {
+    display: none;
+}
+.paper>.profil>header {
+    display: none;
+}
+/* Masquage Competence Niveau */
+.paper>.competences>div>.competence>.niveau {
+    display: none;
+}

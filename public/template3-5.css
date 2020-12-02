@@ -59,6 +59,7 @@
         margin-top: 0px !important; margin-left: 0px !important; transform: scale(1) !important;
         border: 0px;
         width: 100vw;
+        height: 100vh;
     }
     .paper * { 
         visibility: visible; 
@@ -246,11 +247,6 @@ header, .paper>.identite {
     width: 100px;
 }
 
-.paper>.competences>div>.competence>.niveau {
-    display: inline-block;
-    width: 100px;
-}
-
 
 /* Paramètres bloc Langues */
 .paper>.langues>header {
@@ -277,4 +273,10 @@ header, .paper>.identite {
     margin-top: 1em;
     font-size: 1.2em;
     border-bottom: 1.5px darkgray solid;
+}
+
+
+/* Masquage Competence Niveau */
+.paper>.competences>div>.competence>.niveau {
+    display: none;
 }

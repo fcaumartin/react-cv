@@ -59,6 +59,7 @@
         margin-top: 0px !important; margin-left: 0px !important; transform: scale(1) !important;
         border: 0px;
         width: 100vw;
+        height: 100vh;
     }
     .paper * { 
         visibility: visible; 
@@ -163,12 +164,6 @@ header, .paper>.identite {
 }
 
 
-/* Masquage header Profil */
-.paper>.intro>header {
-    display: none;
-}
-
-
 /* Paramètres bloc Expériences */
 .paper>.experiences>header {
     text-transform: uppercase;
@@ -268,15 +263,6 @@ header, .paper>.identite {
     font-size: 1.2em;
     /* border-bottom: 1.5px darkgray solid; */
 }
-.paper>.competences>div>.competence>.libelle {
-    display: inline-block;
-    width: 100px;
-}
-
-.paper>.competences>div>.competence>.niveau {
-    display: inline-block;
-    width: 100px;
-}
 
 
 /* Paramètres bloc Langues */
@@ -294,7 +280,6 @@ header, .paper>.identite {
 
 .paper>.langues>div>.langue>.niveau {
     display: inline-block;
-    width: 100px;
 }
 
 
@@ -306,3 +291,12 @@ header, .paper>.identite {
     /* border-bottom: 1.5px darkgray solid; */
 }
 
+
+/* Masquage header Profil */
+.paper>.intro>header {
+    display: none;
+}
+/* Masquage Competence Niveau */
+.paper>.competences>div>.competence>.niveau {
+    display: none;
+}

@@ -52,6 +52,7 @@
         margin-top: 0px !important; margin-left: 0px !important; transform: scale(1) !important;
         border: 0px;
         width: 100vw;
+        height: 100vh;
     }
     .paper * { 
         visibility: visible; 
@@ -87,21 +88,16 @@
   .poste::before {
     content: '';
     position: absolute;
+    margin-bottom: 1px;
     bottom: 0;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 12px 12px 0 12px;
+    border-width: 14px 14px 0 14px;
     border-color: #FE7A66 transparent transparent transparent;
     left: 10%;
     transform: translateX(-50%) translateY(100%);
   }
-
-
-/* Masquage header Profil */
-.paper>.intro>header {
-    display: none;
-}
 
 
 /* Mise en page descriptions */
@@ -196,12 +192,7 @@
 .paper>.competences {
     padding: 0 15px;
 }
-.paper>.competences>div>.competence>.libelle {
-    display: inline;
-}
-.paper>.competences>div>.competence>.niveau {
-    display: inline;
-}
+
 
 /* Paramètres bloc Langues */
 .paper>.langues>header {
@@ -264,6 +255,15 @@
     display: inline;
 }
 
+
+/* Masquage header Profil */
+.paper>.intro>header {
+    display: none;
+}
+/* Masquage Competence Niveau */
+.paper>.competences>div>.competence>.niveau {
+    display: none;
+}
 
 
 
