@@ -19,3 +19,8 @@
 .rbt-menu {
     overflow-x: hidden !important;
 }
+
+
+.no-screen {
+    display: none;
+}

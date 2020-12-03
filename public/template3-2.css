@@ -57,7 +57,7 @@
     height: max-content;
 }
 .paper>.titre {
-    margin-top: -40px;
+    margin-top: -10px;
 }
 
 
@@ -65,7 +65,7 @@
 .paper>.profil {
     background-color: #eeeeee;
     height: fit-content;
-    margin: -40px 0;
+    margin: -10px 0;
 }
 
 

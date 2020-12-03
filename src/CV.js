@@ -418,8 +418,8 @@ class CV extends React.Component {
                                 {
                                     this.state.reseaux.map((reseau, index) =>
                                         <div className="reseau"  key={index}>
-                                            <div className="libelle">{reseau.type}</div>
-                                            <div className="libelle">{reseau.url}</div>
+                                            <div className="libelle no-screen">{reseau.type}</div>
+                                            <div className="libelle no-screen">{reseau.url}</div>
                                             <div className="niveau no-print">
                                                 <a href="{reseau.url}">{reseau.type}</a>
                                             </div>
