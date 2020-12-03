@@ -10,27 +10,34 @@ const FormCompetences = (props) => {
     const [competence, setCompetence] = useState(""); 
 
     const loadOptions = (evt, callback) => {
-        console.log(evt);
-        let id_rome = props.metier.rome.split("/")[3];
-        console.log(id_rome);
-        axios.get("https://127.0.0.1:8000/api/cv/competences/" + id_rome + "/" + evt )
-        .then( (data) => {
+        console.log(props.metier);
+
+        if ('rome' in props.metier && 'competences' in props.metier.rome) {
+            let data = props.metier.rome.competences.filter( c => c.libelle.toLowerCase().includes(evt) );
             console.log(data);
+            callback(data);
+        }
+        //let id_rome = props.metier.rome.split("/")[3];
+        // console.log(id_rome);
+        // axios.get("https://test.candidatheque.com/api/cv/competences/" + id_rome + "/" + evt )
+        // .then( (data) => {
+        //     console.log(data);
              
-            callback(data.data);
-        });
+        //     callback(data.data);
+        // });
     }
 
     const handleSelect = (evt) => {
         console.log(evt);
-        setCompetence(evt.libelle);
+        if (evt)
+            setCompetence(evt.libelle);
     }
 
     return (
         <div className="cv">
             <Form.Row className="mb-2">
                 <Col className="col-4" md={12}>
-                    { props.metier.libelle }
+                    { props.metier?props.metier.libelle:'' }
                 </Col>
                 <Col className="col-4" md={10}>
                     <AsyncSelect

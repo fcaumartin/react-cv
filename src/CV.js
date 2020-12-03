@@ -18,8 +18,8 @@ class CV extends React.Component {
         super(props);
         this.state = {
             profil: {
-                nom: "Wolstenholme",
-                prenom: "Christopher",
+                nom: "Wolf",
+                prenom: "Maxime",
                 adresse: "Carnaby Street",
                 ville: "London",
                 phone: "+33 6 58 96 52 14",
