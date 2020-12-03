@@ -149,13 +149,12 @@
     border-bottom: 1.5px darkgray solid;
 }
 .paper>.experiences>div>.experience>.date-debut {
-    font-weight: bold;
+    font-weight: 600;
     display: inline-block;
     width: 120px;
 }
 .paper>.experiences>div>.experience>.titre, .paper>.experiences>div>.experience>.date-fin {
-    font-weight: bold;
-    font-size: 1.1em;
+    font-weight: 600;
     display: inline;
 }
 

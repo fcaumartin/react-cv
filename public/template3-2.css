@@ -42,8 +42,6 @@
     }
 
 
-
-
 /* Paramètres bloc Nom */
 .paper>.identite>.nom {
     text-transform: uppercase;
@@ -58,12 +56,16 @@
     color: gray;
     height: max-content;
 }
+.paper>.titre {
+    margin-top: -40px;
+}
 
 
 /* Paramètres bloc Contact */
 .paper>.profil {
     background-color: #eeeeee;
     height: fit-content;
+    margin: -40px 0;
 }
 
 
