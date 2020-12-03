@@ -18,34 +18,60 @@ class CV extends React.Component {
         super(props);
         this.state = {
             profil: {
-                nom: "Doe",
-                prenom: "John",
+                nom: "Wolstenholme",
+                prenom: "Christopher",
                 adresse: "Carnaby Street",
                 ville: "London",
                 phone: "+33 6 58 96 52 14",
                 email: "jodo@yahoo.com",
                 titre: "Développeur Web",
-                description: "bla bla bla",
-                metier: ""
+                description: "Après une thèse de biochimie et un post-doc en chimiométrie pendant lesquels j'avais développé un certain nombre d'outils informatiques...",
+                photo: "http://test.candidatheque.com/assets/photos/profil4.png",
+                metier: "Bioinformaticien / Bioinformaticienne en études, recherche et développement"
             },
             experiences: [
                 { 
-                    dateDebut: "juillet 2001", 
-                    dateFin: "2005", 
+                    dateDebut: "2018", 
+                    dateFin: "maintenant", 
+                    titre: "Lead developer", 
+                    entreprise: "TheBox", 
+                    logo:"http://test.candidatheque.com/assets/photos/logo1.png", 
+                    desciption: "" 
+                },
+                { 
+                    dateDebut: "2012", 
+                    dateFin: "2018", 
                     titre: "stage de découverte", 
-                    entreprise: "Aurior", 
-                    logo:"image.png", 
+                    entreprise: "TheBox", 
+                    logo:"http://test.candidatheque.com/assets/photos/logo2.png", 
+                    desciption: "" 
+                },
+                { 
+                    dateDebut: "2005", 
+                    dateFin: "2012", 
+                    titre: "stage de découverte", 
+                    entreprise: "TheBox", 
+                    logo:"http://test.candidatheque.com/assets/photos/logo3.png", 
                     desciption: "" 
                 }
             ],
             formations: [
                 { 
-                    dateDebut: "1995", 
+                    dateDebut: "2003", 
+                    dateFin: "2004", 
+                    ecole: "BTS - Chimie des particules",
+                    niveau: "3",
+                    diplome: "",
+                    description: "La raison que je donnais maintenant dans mes lettres à Gilberte, de mon refus de la voir, c'était une allusion à quelque mystérieux malentendu, parfaitement fictif, qu'il y aurait eu entre elle et moi."
+
+                },
+                { 
+                    dateDebut: "2004", 
                     dateFin: "2005", 
                     ecole: "Ecole de le dernière chance",
-                    niveau: "6",
+                    niveau: "2",
                     diplome: "Master Communication",
-                    description: ""
+                    description: "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions."
 
                 }
             ],
@@ -203,6 +229,27 @@ class CV extends React.Component {
                             <div className="card">
                                 <div className="card-header" id="heading2">
                                     <h2 className="mb-0">
+                                        <button className="btn btn-block btn-sm text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse4" >
+                                            Competences                                
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapse4" className="collapse " data-parent="#accordion1">
+                                    <div className="card-body">
+                                    <FormCompetences
+                                        value={this.state.competences}
+                                        metier={this.state.profil.metier}
+                                        addCompetence={(evt, com) => this.handleAddCompetence(evt, com)}
+                                        delCompetence={(i) => this.handleDelCompetence(i)}
+                                        changeCompetence={(i, exp) => this.handleChangeCompetence(i, exp)}
+                                    />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div className="card">
+                                <div className="card-header" id="heading2">
+                                    <h2 className="mb-0">
                                         <button className="btn btn-block btn-sm text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse2" >
                                             Experiences                                
                                         </button>
@@ -234,26 +281,6 @@ class CV extends React.Component {
                                         addFormation={(evt) => this.handleAddFormation(evt)}
                                         delFormation={(i) => this.handleDelFormation(i)}
                                         changeFormation={(i, exp) => this.handleChangeFormation(i, exp)}
-                                    />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="card-header" id="heading2">
-                                    <h2 className="mb-0">
-                                        <button className="btn btn-block btn-sm text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse4" >
-                                            Competences                                
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapse4" className="collapse " data-parent="#accordion1">
-                                    <div className="card-body">
-                                    <FormCompetences
-                                        value={this.state.competences}
-                                        metier={this.state.profil.metier}
-                                        addCompetence={(evt, com) => this.handleAddCompetence(evt, com)}
-                                        delCompetence={(i) => this.handleDelCompetence(i)}
-                                        changeCompetence={(i, exp) => this.handleChangeCompetence(i, exp)}
                                     />
                                     </div>
                                 </div>
