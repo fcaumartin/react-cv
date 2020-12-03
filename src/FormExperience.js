@@ -48,8 +48,7 @@ class FormExperience extends React.Component {
                                 placeholder="Titre"
                             />
                         </Col>
-                    </Form.Row>
-                    <Form.Row className="mb-2">
+                    
                         <Col>
                             <Form.Control
                                 value={this.props.value.entreprise}
@@ -70,7 +69,7 @@ class FormExperience extends React.Component {
                         </Col>
                         <Col>
                             <Form.File 
-                                id="custom-file"
+                                // id="custom-file"
                                 label="Logo"
                                 custom
                                 // value={this.props.value.logo}

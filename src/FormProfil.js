@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 // import fetch from 'isomorphic-fetch';
 
 import { Col, Form } from 'react-bootstrap';
-import { AsyncTypeahead } from 'react-bootstrap-typeahead';
+// import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import AsyncSelect from 'react-select/async';
 
 const FormProfil = (props) => {
@@ -77,7 +77,7 @@ const FormProfil = (props) => {
                     </Col>
                     <Col className="col-4">
                         <Form.File 
-                                id="custom-file"
+                                // id="custom-file"
                                 label="Photo"
                                 data-browse="Choisir"
                                 custom
@@ -143,6 +143,7 @@ const FormProfil = (props) => {
                             )}
                         /> */}
                         <AsyncSelect
+                            defaultOptions={true}
                             className="mb-2"
                             isClearable={true}
                             loadOptions={loadOptions}
