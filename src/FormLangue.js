@@ -16,31 +16,37 @@ class FormLangue extends React.Component {
         return (
             <div >
                 <Form >
-                <Form.Row className="mb-2">
+                    <Form.Row className="mb-2">
                         <Col xs={9}>
                             <Form.Control
                                 value={this.props.value.libelle}
                                 onChange={(evt) => this.handleChange(evt)}
-                                ref="libelle" 
+                                ref="libelle"
                                 placeholder="Libelle"
                             />
                         </Col>
                         <Col xs={2}>
                             {/* technique, notion, courant, bilingue */}
-                            <Form.Control
+                            <Form.Control as="select" >
+                                <option>Technique</option>
+                                <option>Notions</option>
+                                <option>Courant</option>
+                                <option>Bilingue</option>
+                            </Form.Control>
+                            {/* <Form.Control
                                 value={this.props.value.niveau}
                                 onChange={(evt) => this.handleChange(evt)}
                                 ref="niveau"
                                 placeholder="Niveau"
-                            />
+                            /> */}
                         </Col>
-                        
-                    
+
+
                         <Col xs={1}>
-                            <Button  onClick={() => this.props.delLangue(this)} >X</Button>
+                            <Button onClick={() => this.props.delLangue(this)} >X</Button>
                         </Col>
                     </Form.Row>
-                    
+
                 </Form>
             </div>
         );
