@@ -58,6 +58,7 @@
 }
 .paper>.titre {
     margin-top: -10px;
+    margin-left: auto;
 }
 
 
@@ -65,7 +66,6 @@
 .paper>.profil {
     background-color: #eeeeee;
     height: fit-content;
-    margin: -10px 0;
 }
 
 

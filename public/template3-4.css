@@ -6,7 +6,7 @@
     width: 21cm;
     min-height: 29.7cm;
     transform: scale(0.8);
-    /* overflow-wrap: break-word; */
+    overflow-wrap: break-word;
 }
 
 /* Grid principal */
@@ -86,8 +86,7 @@
 .paper>.identite>.nom {
     text-align: center;
     text-transform: uppercase;
-    font-size: 2rem;
-    margin-bottom: -40px;
+    font-size: 3rem;
     /* background-color: #eeeeee; */
 }
 
