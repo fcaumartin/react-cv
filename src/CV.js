@@ -188,9 +188,9 @@ class CV extends React.Component {
         return (
             <div className="row">
                 <div className="col-6 no-print">
-                    <Dialog />
+                    {/* <Dialog /> */}
                 </div>
-                <div className="col-6 text-right no-print">
+                <div className="col-6 text-right no-print mt-5">
                     <Templates />
                 </div>
                 
@@ -199,10 +199,10 @@ class CV extends React.Component {
                         <div className="col-9">
                             <h1>Module de création de CV.</h1>
                         </div>
-                        <div className="col-3 text-right">
+                        {/* <div className="col-3 text-right">
                         <Button variant="secondary" onClick={ () => { this.handleSaveLocal(); } }>Save</Button>&nbsp;
                         <Button variant="secondary" onClick={ () => { this.handleLoadLocal(); } }>Load</Button>
-                        </div>
+                        </div> */}
                     </div>
                     
                     Cliquez sur les onglets ci-dessous pour compléter les différentes rubriques de votre CV

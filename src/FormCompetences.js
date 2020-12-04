@@ -13,6 +13,7 @@ const FormCompetences = (props) => {
     const [competence, setCompetence] = useState(""); 
 
     const loadOptions = (evt, callback) => {
+        console.log("loading react-select async for competences")
         console.log(props.metier);
 
         if ('rome' in props.metier && 'competences' in props.metier.rome) {
@@ -44,7 +45,7 @@ const FormCompetences = (props) => {
                 </Col>
                 <Col className="col-4" md={10}>
                     <AsyncSelect
-                        defaultOptions={true}
+                        //defaultOptions={true}
                         loadOptions={loadOptions}
                         getOptionLabel={ (met) => { return met.libelle } }
                         // onInputChange={handleCherche}

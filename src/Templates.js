@@ -11,10 +11,10 @@ function Templates() {
           <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" activeKey={style} onSelect={(k) => setStyle(k)} >
             <Tab eventKey="/template3-2.css" title="Raw"></Tab>
             <Tab eventKey="/template3-3.css" title="Gray"></Tab>
-            <Tab eventKey="/template3-5.css" title="Mod 3" ></Tab>
+            <Tab eventKey="/template3-5.css" title="Green" ></Tab>
             <Tab eventKey="/template3-4.css" title="Blue" ></Tab>
-            <Tab eventKey="/template3-7.css" title="Mod 5" ></Tab>
-            <Tab eventKey="/template3-6.css" title="Mod 6" ></Tab>
+            <Tab eventKey="/template3-7.css" title="Green carpet" ></Tab>
+            <Tab eventKey="/template3-6.css" title="Cool blue" ></Tab>
             <Tab eventKey="/template3-1.css" title="Mod 7" ></Tab>
             <Tab eventKey="/template3-8.css" title="Red" ></Tab>
           </Tabs>
