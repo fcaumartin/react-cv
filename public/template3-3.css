@@ -84,7 +84,7 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 3em;
-    margin-bottom: -40px;
+    /* margin-bottom: -40px; */
 }
 
 
@@ -220,3 +220,21 @@
     display: none;
 }
 
+/* meter {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 120px;
+    height: 6px;
+} */
+
+meter[value]::-webkit-meter-bar {
+    border: 1px gray solid;
+    background: red;
+    color: blue;
+  }
+
+
+meter[value]::-webkit-meter-optimum-value {
+background: yellow;
+color: green;
+}

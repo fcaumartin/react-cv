@@ -20,16 +20,6 @@ class FormFormation extends React.Component {
         return (
             <div >
                 <Form >
-                <Form.Row className="mb-2">
-                        <Col>
-                            <Form.Control
-                                value={this.props.value.ecole}
-                                onChange={(evt) => this.handleChange(evt)}
-                                ref="ecole" 
-                                placeholder="Ecole"
-                            />
-                        </Col>
-                    </Form.Row>
                     <Form.Row className="mb-2">
                         <Col>
                             <Form.Control
@@ -45,6 +35,16 @@ class FormFormation extends React.Component {
                                 onChange={(evt) => this.handleChange(evt)}
                                 ref="dateFin"
                                 placeholder="Date de fin"
+                            />
+                        </Col>
+                    </Form.Row>
+                    <Form.Row className="mb-2">
+                        <Col>
+                            <Form.Control
+                                value={this.props.value.ecole}
+                                onChange={(evt) => this.handleChange(evt)}
+                                ref="ecole" 
+                                placeholder="Ecole"
                             />
                         </Col>
                     </Form.Row>

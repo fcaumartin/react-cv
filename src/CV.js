@@ -377,8 +377,9 @@ class CV extends React.Component {
                                         <div className="formation"  key={index}>
                                             <div className="date-debut">{formation.dateDebut}</div>
                                             <div className="date-fin">{formation.dateFin}</div>
-                                            <div className="ecole">{formation.entreprise}</div>
-                                            <div className="titre">{formation.titre}</div>
+                                            <div className="ecole">{formation.ecole}</div>
+                                            <div className="titre">{formation.diplome}</div>
+                                            <div className="niveau">{formation.niveau}</div>
                                             <div className="desciption">{formation.description}</div>
                                         </div>
                                     )
@@ -393,7 +394,7 @@ class CV extends React.Component {
                                         <div className="competence"  key={index}>
                                             <div className="libelle">{competence.libelle}</div>
                                             <div className={"niveau niveau-" + competence.niveau}>{competence.niveau}</div>
-                                            <progress max="5" value={competence.niveau}></progress>
+                                            <meter max="5" value={competence.niveau}></meter>
                                         </div>
                                     )
                                 }

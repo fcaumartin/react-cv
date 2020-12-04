@@ -100,13 +100,17 @@
 
 
 /* Couleur background sidebar */
-.paper>.identite, .paper>.profil, .paper>.competences, .paper>.langues, .paper>.reseaux {
+.paper>.profil, .paper>.competences, .paper>.langues, .paper>.reseaux {
     background-color: #0187DE;
     text-indent: 15px;
     color: white;
     margin-top: -2px;
 }
-.paper>.competences>div>.competence>progress {
+.paper>.identite {
+    background-color: #0187DE;
+    color: white;
+}
+.paper>.identite>.nom, .paper>.competences>div>.competence>progress {
     margin-left: 15px;
 }
 
