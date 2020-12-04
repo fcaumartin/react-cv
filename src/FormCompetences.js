@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import {Button, Col, Form} from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
-import axios from 'axios';
+// import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
 
 import FormCompetence from './FormCompetence.js'
 
@@ -10,6 +13,7 @@ const FormCompetences = (props) => {
     const [competence, setCompetence] = useState(""); 
 
     const loadOptions = (evt, callback) => {
+        console.log("loading react-select async for competences")
         console.log(props.metier);
 
         if ('rome' in props.metier && 'competences' in props.metier.rome) {
@@ -37,17 +41,17 @@ const FormCompetences = (props) => {
         <div className="cv">
             <Form.Row className="mb-2">
                 <Col className="col-4" md={12}>
-                    { props.metier?props.metier.libelle:'' }
+                    { props.metier?props.metier.libelle:'vous pouvez selectionner dans la rubrique Informations personnelles (ci-dessus)' }
                 </Col>
                 <Col className="col-4" md={10}>
                     <AsyncSelect
+                        //defaultOptions={true}
                         loadOptions={loadOptions}
                         getOptionLabel={ (met) => { return met.libelle } }
                         // onInputChange={handleCherche}
                         placeholder="Saisissez une compétence..."
                         onChange={handleSelect}
                         isClearable={true}
-                        
                     />
                 </Col>
                 <Col className="col-4"  md={2}>
@@ -55,7 +59,7 @@ const FormCompetences = (props) => {
                         variant="primary w-100"
                         onClick={(evt) => { props.addCompetence(evt, competence); console.log("com=" + competence) } }
                     >
-                        Ajouter
+                        <FontAwesomeIcon icon={faPlus} />
                     </Button>
                 </Col>
             </Form.Row>

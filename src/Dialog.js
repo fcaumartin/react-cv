@@ -19,7 +19,7 @@ function Dialog() {
           </Modal.Header>
           <Modal.Body>
             Adresse publique de votre profil:<br/>
-            <a href="#">http://www.candidatheque.com/profil/x654g87Us321</a><br/>
+            <a href={'http://www.candidatheque.com/profil/x654g87Us321'}>http://www.candidatheque.com/profil/x654g87Us321</a><br/>
             <br/>
             <Button variant="secondary" className="btn-sm" >
               Télécharger au format PDF

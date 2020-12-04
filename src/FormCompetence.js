@@ -1,5 +1,7 @@
 import React from 'react';
 import { Col, Form, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 class FormCompetence extends React.Component {
 
@@ -27,19 +29,23 @@ class FormCompetence extends React.Component {
                         </Col>
                         <Col xs={2}>
                             <Form.Control
+                                custom 
                                 value={this.props.value.niveau}
                                 onChange={(evt) => this.handleChange(evt)}
                                 ref="niveau"
-                                type="number"
+                                type="range"
                                 min="1"
                                 max="5"
                                 placeholder="Niveau"
+
                             />
                         </Col>
                         
                     
                         <Col xs={1}>
-                            <Button  onClick={() => this.props.delCompetence(this)} >X</Button>
+                            <Button  onClick={() => this.props.delCompetence(this)} title={'Supprimer cet compétence'}>
+                            <FontAwesomeIcon icon={faTimes} />
+                            </Button>
                         </Col>
                     </Form.Row>
                     

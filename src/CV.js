@@ -1,6 +1,5 @@
 import React from 'react';
-import { Col, Form, Button } from 'react-bootstrap';
-import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 import FormExperiences from './FormExperiences.js';
 import FormFormations from './FormFormations.js';
@@ -18,8 +17,8 @@ class CV extends React.Component {
         super(props);
         this.state = {
             profil: {
-                nom: "Wolf",
-                prenom: "Maxime",
+                nom: "Caumartin",
+                prenom: "François-Régis",
                 adresse: "Carnaby Street",
                 ville: "London",
                 phone: "+33 6 58 96 52 14",
@@ -27,7 +26,7 @@ class CV extends React.Component {
                 titre: "Développeur Web",
                 description: "Après une thèse de biochimie et un post-doc en chimiométrie pendant lesquels j'avais développé un certain nombre d'outils informatiques...",
                 photo: "http://test.candidatheque.com/assets/photos/profil4.png",
-                metier: "Bioinformaticien / Bioinformaticienne en études, recherche et développement"
+                metier: {}
             },
             experiences: [
                 { 
@@ -189,9 +188,9 @@ class CV extends React.Component {
         return (
             <div className="row">
                 <div className="col-6 no-print">
-                    <Dialog />
+                    {/* <Dialog /> */}
                 </div>
-                <div className="col-6 text-right no-print">
+                <div className="col-6 text-right no-print mt-5">
                     <Templates />
                 </div>
                 
@@ -200,10 +199,10 @@ class CV extends React.Component {
                         <div className="col-9">
                             <h1>Module de création de CV.</h1>
                         </div>
-                        <div className="col-3 text-right">
+                        {/* <div className="col-3 text-right">
                         <Button variant="secondary" onClick={ () => { this.handleSaveLocal(); } }>Save</Button>&nbsp;
                         <Button variant="secondary" onClick={ () => { this.handleLoadLocal(); } }>Load</Button>
-                        </div>
+                        </div> */}
                     </div>
                     
                     Cliquez sur les onglets ci-dessous pour compléter les différentes rubriques de votre CV
@@ -226,7 +225,7 @@ class CV extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card">
+                            <div className="card"  style={{overflow: 'visible'}}>
                                 <div className="card-header" id="heading2">
                                     <h2 className="mb-0">
                                         <button className="btn btn-block btn-sm text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapse4" >
@@ -328,7 +327,7 @@ class CV extends React.Component {
                     
                 </div>
 
-                <div  className="paper-container">
+                <div  className="col-sm-6 paper-container">
 
                     <div className="paper">
                         <section className="identite">
