@@ -116,11 +116,10 @@ header, .paper>.identite {
 
 
 /* Paramètres bloc photo */
-.paper>.photo>.portrait{
-    background-color: #E9A507;
-    height: 110px;
-    width: 110px;
-    border-radius: 50%;
+.paper>.photo {
+   width:120px;
+   height:120px;
+   clip-path:ellipse(50% 50%);
 }
 
 

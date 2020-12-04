@@ -335,7 +335,7 @@ class CV extends React.Component {
                             <div className="nom">{this.state.profil.prenom} {this.state.profil.nom}</div>
                         </section>
                         <section className="photo">
-                            <div className="portrait"></div>
+                            <div className="portrait"><img src={this.state.profil.photo}/></div>
                         </section>
                         <section className="profil">
                             <header>Contact</header>
