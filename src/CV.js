@@ -360,7 +360,7 @@ class CV extends React.Component {
                                             <div className="date-fin">{experience.dateFin}</div>
                                             <div className="entreprise">{experience.entreprise}</div>
                                             <div className="ville">{experience.ville}</div>
-                                            <div className="logo">{experience.logo}</div>
+                                            <div className="logo"><img src={experience.logo}/></div>
                                             <div className="titre">{experience.titre}</div>
                                             <div className="description">{experience.description}</div>
                                         </div>

@@ -7,3 +7,8 @@
     body > div> div> div> div> div> div { display:none; }
     body .div { display:block; }
 } */
+
+.paper>.experiences>div>.experience>.logo>img {
+    width: 25px;
+    height: 25px;
+} 

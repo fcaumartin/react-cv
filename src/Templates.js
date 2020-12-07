@@ -17,6 +17,7 @@ function Templates() {
             <Tab eventKey="/template3-6.css" title="Cool blue" ></Tab>
             <Tab eventKey="/template3-1.css" title="Mod 7" ></Tab>
             <Tab eventKey="/template3-8.css" title="Red" ></Tab>
+            <Tab eventKey="/template3-9.css" title="Dark" ></Tab>
           </Tabs>
         {/* 
           <DropdownButton variant="secondary"  key={1} id="dropdown-basic-button" title="Modèles" >
