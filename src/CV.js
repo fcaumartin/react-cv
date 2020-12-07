@@ -35,7 +35,7 @@ class CV extends React.Component {
                     titre: "Lead developer", 
                     entreprise: "TheBox", 
                     logo:"http://test.candidatheque.com/assets/photos/logo1.png", 
-                    desciption: "" 
+                    description: "" 
                 },
                 { 
                     dateDebut: "2012", 
@@ -43,7 +43,7 @@ class CV extends React.Component {
                     titre: "stage de découverte", 
                     entreprise: "TheBox", 
                     logo:"http://test.candidatheque.com/assets/photos/logo2.png", 
-                    desciption: "" 
+                    description: "" 
                 },
                 { 
                     dateDebut: "2005", 
@@ -51,7 +51,7 @@ class CV extends React.Component {
                     titre: "stage de découverte", 
                     entreprise: "TheBox", 
                     logo:"http://test.candidatheque.com/assets/photos/logo3.png", 
-                    desciption: "" 
+                    description: "" 
                 }
             ],
             formations: [
@@ -120,7 +120,7 @@ class CV extends React.Component {
     //////////////////////////////////////////////////////////////
     handleAddFormation(evt) {
         let formations = this.state.formations;
-        formations.push({ dateDebut: "", dateFin: "", ecole: "", niveau: "", diplome: "", desciption: "" });
+        formations.push({ dateDebut: "", dateFin: "", ecole: "", niveau: "", diplome: "", description: "" });
         this.setState({ formations });
     }
     handleDelFormation(i) {
@@ -362,7 +362,7 @@ class CV extends React.Component {
                                             <div className="ville">{experience.ville}</div>
                                             <div className="logo">{experience.logo}</div>
                                             <div className="titre">{experience.titre}</div>
-                                            <div className="desciption">{experience.description}</div>
+                                            <div className="description">{experience.description}</div>
                                         </div>
                                     )
                                 }
@@ -379,7 +379,7 @@ class CV extends React.Component {
                                             <div className="ecole">{formation.ecole}</div>
                                             <div className="titre">{formation.diplome}</div>
                                             <div className="niveau">{formation.niveau}</div>
-                                            <div className="desciption">{formation.description}</div>
+                                            <div className="description">{formation.description}</div>
                                         </div>
                                     )
                                 }

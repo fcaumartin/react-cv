@@ -160,7 +160,7 @@ const FormProfil = (props) => {
                                 props.value.description=evt.target.value; 
                                 props.onProfilChange(props.value)
                             }}
-                            placeholder="Desciption"
+                            placeholder="Description"
                         />
                     </Col>
                 </Form.Row>
