@@ -250,8 +250,13 @@ meter[value]::-webkit-meter-bar {
     /* border: 1px gray solid; */
     background: white;
     /* color: blue; */
-  }
+}
 
+
+/* Paramètres bloc photo */
+.paper>.photo>.portrait>img {
+    margin-top: 15px;
+}
 
 meter[value]::-webkit-meter-optimum-value {
 background: gray;

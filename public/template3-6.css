@@ -158,7 +158,7 @@
     background-color: #0187DE;
     color: white;
 }
-.paper>.identite>.nom, .paper>.competences>div>.competence>progress {
+.paper>.identite>.nom, .paper>.competences>div>.competence>meter {
     margin-left: 15px;
 }
 
@@ -287,4 +287,8 @@ margin-top: -2px;
 /* Masquage formation Description */
 .paper>.formations>div>.formation>.description {
     display: none;
+}
+
+meter[value]::-webkit-meter-optimum-value {
+    background:  #016CB2;
 }

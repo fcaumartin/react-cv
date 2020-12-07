@@ -48,7 +48,7 @@
 
 
 /* Grid principal */
-.paper {
+/* .paper {
     display: grid;
     grid-template-columns: 1.3fr 0.7fr 2fr;
     grid-template-rows: 0.5fr 1fr repeat(4, 2fr) 0.5fr;
@@ -66,22 +66,22 @@
     .reseaux { grid-area: 6 / 1 / 7 / 2; }
     .experiences { grid-area: 3 / 2 / 5 / 4; }
     .formations { grid-area: 5 / 2 / 7 / 4; }
-    .photo { grid-area: 7 / 3 / 8 / 4; }
+    .photo { grid-area: 7 / 3 / 8 / 4; } */
 
 
 .paper {
     display: grid;
     grid-template-columns: 1.3fr 0.7fr 2fr;
-    grid-template-rows: 0.5fr 1fr repeat(2, 1.4fr) repeat(3, 1.8fr) 0.5fr;
+    grid-template-rows: 0.4fr 0.6fr repeat(2, 0.8fr) 1.2fr repeat(2, 0.8fr) 0.4fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
             
     .paper>.titre { grid-area: 1 / 1 / 2 / 3; }
-    .identite { grid-area: 2 / 1 / 3 / 2; }
+    .identite { grid-area: 2 / 1 / 3 / 3; }
     .intro { grid-area: 2 / 3 / 3 / 4; }
-    .profil { grid-area: 3 / 1 / 4 / 2; }
-    .photo { grid-area: 4 / 1 / 5 / 2; }
+    .photo { grid-area: 3 / 1 / 4 / 2; }
+    .profil { grid-area: 4 / 1 / 5 / 2; }
     .competences { grid-area: 5 / 1 / 6 / 2; }
     .langues { grid-area: 6 / 1 / 7 / 2; }
     .reseaux { grid-area: 7 / 1 / 8 / 2; }
@@ -127,6 +127,10 @@
 
 
 /* Photo */
+.paper>.photo>.portrait>img {
+    width: 180px;
+}
+
 .divtest{
     background-color: #FE7A66;
 }
@@ -160,7 +164,7 @@
 
 
 /* Marge blocs gauche */
-.paper>.experiences, .paper>.formations, .paper>.identite, .paper>.titre {
+.paper>.experiences, .paper>.formations, .paper>.identite, .paper>.titre, .paper>.photo {
     padding: 0 15px;
 }
 .paper>.intro {
@@ -170,7 +174,7 @@
 /* Paramètres bloc nom */
 .paper>.identite>.nom {
     text-transform: uppercase;
-    font-size: 3em;
+    font-size: 2.6rem;
     /* margin-bottom: -40px; */
     color: #FE7A66;
 }
@@ -319,6 +323,17 @@
 /* Masquage formation Description */
 .paper>.formations>div>.formation>.description {
     display: none;
+}
+
+
+/* Paramètres bloc photo */
+.paper>.photo>.portrait>img {
+    margin-top: 15px;
+}
+
+meter[value]::-webkit-meter-optimum-value {
+background: #FE7A66;
+/* color: green; */
 }
 
 

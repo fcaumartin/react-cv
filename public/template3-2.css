@@ -151,6 +151,16 @@
     border-top: 2px gray solid;
 }
 
+/* meter[value]::-webkit-meter-bar {
+    background: white;
+} */
+
+
+meter[value]::-webkit-meter-optimum-value {
+background: gray;
+/* color: green; */
+}
+
 
 /* Ratio blocs*/
 .paper>.identite{

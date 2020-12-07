@@ -177,7 +177,6 @@ header, .paper>.identite {
 /* Paramètres bloc Intro */
 .paper>.intro>header {
     text-transform: uppercase;
-    margin-top: 1em;
     font-size: 1.2em;
 }
 
@@ -304,4 +303,13 @@ header, .paper>.identite {
 /* Masquage formation Description */
 .paper>.formations>div>.formation>.description {
     display: none;
+}
+
+.paper>.photo>.portrait>img {
+    width: 160px;
+    margin-top: 10px;
+}
+
+meter[value]::-webkit-meter-optimum-value {
+    background:  #39C3B1;
 }
