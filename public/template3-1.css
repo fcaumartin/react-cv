@@ -327,3 +327,7 @@ header, .paper>.identite {
 .paper>.competences>div>.competence>.niveau, .paper>.formations>div>.formation>.description {
     display: none;
 }
+
+meter[value]::-webkit-meter-optimum-value {
+    background: #E9A507;
+}
