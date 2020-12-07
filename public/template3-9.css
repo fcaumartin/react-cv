@@ -257,3 +257,8 @@
     padding: 0 15px;
 }
 
+/* Masquage formation Description */
+.paper>.formations>div>.formation>.description {
+    display: none;
+}
+

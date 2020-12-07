@@ -257,3 +257,9 @@ meter[value]::-webkit-meter-optimum-value {
 background: gray;
 /* color: green; */
 }
+
+
+/* Masquage formation Description */
+.paper>.formations>div>.formation>.description {
+    display: none;
+}

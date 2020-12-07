@@ -59,25 +59,24 @@
 .experiences { grid-area: 2 / 2 / 4 / 4; }
 .formations { grid-area: 4 / 2 / 6 / 4; } */
 
-.paper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0.8fr 0.4fr repeat(4, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    overflow-wrap: anywhere;
-    }
-    
-    .identite { grid-area: 1 / 1 / 2 / 2; }
-    .titre { grid-area: 2 / 1 / 3 / 2; }
-    .profil { grid-area: 3 / 1 / 4 / 2; }
-    .competences { grid-area: 4 / 1 / 5 / 2; }
-    .langues { grid-area: 5 / 1 / 6 / 2; }
-    .reseaux { grid-area: 6 / 1 / 7 / 2; }
-    .intro { grid-area: 1 / 2 / 2 / 4; }
-    .experiences { grid-area: 2 / 2 / 5 / 4; }
-    .formations { grid-area: 5 / 2 / 7 / 4; }
-
+    .paper {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 3fr;
+        grid-template-rows: 0.3fr 0.2fr 0.5fr repeat(2, 0.8fr) 1fr 0.6fr 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+        .identite { grid-area: 1 / 1 / 3 / 3; }
+        .paper>.titre { grid-area: 3 / 1 / 4 / 3; }
+        .intro { grid-area: 2 / 3 / 3 / 6; }
+        .profil { grid-area: 4 / 1 / 5 / 3; }
+        .photo { grid-area: 5 / 1 / 6 / 3; }
+        .competences { grid-area: 6 / 1 / 7 / 3; }
+        .langues { grid-area: 7 / 1 / 8 / 3; }
+        .reseaux { grid-area: 8 / 1 / 9 / 3; }
+        .experiences { grid-area: 3 / 3 / 6 / 4; }
+        .formations { grid-area: 6 / 3 / 9 / 4; }
 
 /********** Conditions d'impressions **********/
 
@@ -108,17 +107,23 @@
     }
 
 
-.paper>.identite, .paper>.titre, .paper>.profil, .paper>.competences, .paper>.langues, .paper>.reseaux{
+.paper>.identite, .paper>.titre, .paper>.profil, .paper>.competences, .paper>.langues, .paper>.reseaux {
     color: white;
     background-color: #1A409A;
     padding-left: 10px;
     margin-top: -2px;
 }
 
+.paper>.photo {
+    background-color: #1A409A;
+    text-align: center;
+    margin-top: -2px;
+}
+
 .paper>.identite>.nom {
     text-align: center;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2.2rem;
     /* background-color: #eeeeee; */
 }
 
@@ -269,5 +274,10 @@
 
 /* Masquage Competence Niveau */
 .paper>.competences>div>.competence>.niveau {
+    display: none;
+}
+
+/* Masquage formation Description */
+.paper>.formations>div>.formation>.description {
     display: none;
 }

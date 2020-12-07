@@ -56,10 +56,11 @@
     grid-row-gap: 0px;
     }
     
-    .titre { grid-area: 1 / 1 / 2 / 3; }
+    .paper>.titre { grid-area: 1 / 1 / 2 / 3; }
     .identite { grid-area: 2 / 1 / 3 / 3; }
     .intro { grid-area: 2 / 3 / 3 / 4; }
-    .profil { grid-area: 3 / 1 / 4 / 2; }
+    .profil { grid-area: 3 / 1 / 3 / 2; }
+    .photo { grid-area: 4 / 1 / 4 / 2; }
     .competences { grid-area: 4 / 1 / 5 / 2; }
     .langues { grid-area: 5 / 1 / 6 / 2; }
     .reseaux { grid-area: 6 / 1 / 7 / 2; }
@@ -67,6 +68,26 @@
     .formations { grid-area: 5 / 2 / 7 / 4; }
     .photo { grid-area: 7 / 3 / 8 / 4; }
 
+
+.paper {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr 2fr;
+    grid-template-rows: 0.5fr 1fr repeat(2, 1.4fr) repeat(3, 1.8fr) 0.5fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+            
+    .paper>.titre { grid-area: 1 / 1 / 2 / 3; }
+    .identite { grid-area: 2 / 1 / 3 / 2; }
+    .intro { grid-area: 2 / 3 / 3 / 4; }
+    .profil { grid-area: 3 / 1 / 4 / 2; }
+    .photo { grid-area: 4 / 1 / 5 / 2; }
+    .competences { grid-area: 5 / 1 / 6 / 2; }
+    .langues { grid-area: 6 / 1 / 7 / 2; }
+    .reseaux { grid-area: 7 / 1 / 8 / 2; }
+    .experiences { grid-area: 3 / 2 / 6 / 4; }
+    .formations { grid-area: 6 / 2 / 8 / 4; }
+    .divtest { grid-area: 8 / 3 / 9 / 4; }
 
 /********** Conditions d'impressions **********/
 
@@ -106,7 +127,7 @@
 
 
 /* Photo */
-.photo{
+.divtest{
     background-color: #FE7A66;
 }
 
@@ -150,7 +171,7 @@
 .paper>.identite>.nom {
     text-transform: uppercase;
     font-size: 3em;
-    margin-bottom: -40px;
+    /* margin-bottom: -40px; */
     color: #FE7A66;
 }
 
@@ -292,6 +313,11 @@
 }
 /* Masquage Competence Niveau */
 .paper>.competences>div>.competence>.niveau {
+    display: none;
+}
+
+/* Masquage formation Description */
+.paper>.formations>div>.formation>.description {
     display: none;
 }
 

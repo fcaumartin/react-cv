@@ -331,3 +331,8 @@ header, .paper>.identite {
 meter[value]::-webkit-meter-optimum-value {
     background: #E9A507;
 }
+
+/* Masquage formation Description */
+.paper>.formations>div>.formation>.description {
+    display: none;
+}

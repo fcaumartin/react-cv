@@ -62,9 +62,10 @@
     grid-row-gap: 0px;
     }
     
-    .identite { grid-area: 1 / 1 / 2 / 6; }
-    .titre { grid-area: 2 / 1 / 3 / 6; }
+    .identite { grid-area: 1 / 1 / 2 / 5; }
+    .paper>.titre { grid-area: 2 / 1 / 3 / 5; }
     .intro { grid-area: 3 / 1 / 4 / 6; }
+    .photo { grid-area: 1 / 5 / 3 / 6; }
     .profil { grid-area: 4 / 1 / 5 / 3; }
     .competences { grid-area: 5 / 1 / 6 / 3; }
     .langues { grid-area: 6 / 1 / 7 / 3; }
@@ -151,8 +152,8 @@ header, .paper>.identite {
 /* Paramètres bloc nom */
 .paper>.identite>.nom {
     text-transform: uppercase;
-    font-size: 3em;
-    margin-bottom: -40px;
+    font-size: 2.2rem;
+    /* margin-bottom: -20px; */
 }
 
 
@@ -297,5 +298,10 @@ header, .paper>.identite {
 
 /* Masquage Competence Niveau */
 .paper>.competences>div>.competence>.niveau {
+    display: none;
+}
+
+/* Masquage formation Description */
+.paper>.formations>div>.formation>.description {
     display: none;
 }

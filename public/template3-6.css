@@ -59,7 +59,7 @@
     .photo { grid-area: 1 / 1 / 7 / 3; } */
 
 
-.paper {
+/* .paper {
     display: grid;
     grid-template-columns: 0.5fr repeat(4, 1fr);
     grid-template-rows: repeat(2, 0.3fr) repeat(4, 1fr);
@@ -75,8 +75,27 @@
     .titre { grid-area: 1 / 3 / 2 / 6; }
     .intro { grid-area: 2 / 3 / 3 / 6; }
     .experiences { grid-area: 3 / 3 / 5 / 6; }
-    .formations { grid-area: 5 / 3 / 7 / 6; }
+    .formations { grid-area: 5 / 3 / 7 / 6; } */
 
+
+    .paper {
+        display: grid;
+        grid-template-columns: 0.5fr repeat(4, 1fr);
+        grid-template-rows: repeat(2, 0.3fr) repeat(5, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 0px;
+        }
+        
+        .identite { grid-area: 1 / 1 / 3 / 3; }
+        .photo { grid-area: 3 / 1 / 4 / 3; }
+        .profil { grid-area: 4 / 1 / 5 / 3; }
+        .competences { grid-area: 5 / 1 / 6 / 3; }
+        .langues { grid-area: 6 / 1 / 7 / 3; }
+        .reseaux { grid-area: 7 / 1 / 8 / 3; }
+        .titre { grid-area: 1 / 3 / 2 / 6; }
+        .intro { grid-area: 2 / 3 / 3 / 6; }
+        .experiences { grid-area: 3 / 3 / 6 / 6; }
+        .formations { grid-area: 6 / 3 / 8 / 6; }
     /********** Conditions d'impressions **********/
 
 @media print {
@@ -143,6 +162,11 @@
     margin-left: 15px;
 }
 
+.paper>.photo {
+background-color: #0187DE;
+text-align: center;
+margin-top: -2px;
+}
 
 /* Mise en page descriptions */
 .paper>.experiences>div>.experience>.description, .paper>.formations>div>.formation>.description {
@@ -260,3 +284,7 @@
     display: none;
 }
 
+/* Masquage formation Description */
+.paper>.formations>div>.formation>.description {
+    display: none;
+}
