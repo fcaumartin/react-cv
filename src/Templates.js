@@ -1,14 +1,28 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
+import $ from 'jquery';
 
 function Templates() {
 	const [style, setStyle] = useState("/template3-2.css");
-	// const [key, setKey] = useState('/template3-2.css');
+  // const [key, setKey] = useState('/template3-2.css');
+  
+    const handleSelect = (k) => {
+      setStyle(k); 
+      //console.log("go"); 
+      //window.dispatchEvent(new Event('resize'));
+      setTimeout( ()=>{window.dispatchEvent(new Event('resize'));}, 100 );
+    }
+
+    //useEffect(() => {
+      //console.log("go ue"); 
+      //window.dispatchEvent(new Event('resize'));
+    //});
   
     return (
         <span>
 			<link rel="stylesheet" href={style} />
-          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" activeKey={style} onSelect={(k) => setStyle(k)} >
+          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" activeKey={style} 
+                onSelect={(k) => { handleSelect(k) } }>
             <Tab eventKey="/template3-2.css" title="Raw"></Tab>
             <Tab eventKey="/template3-3.css" title="Gray"></Tab>
             <Tab eventKey="/template3-5.css" title="Green" ></Tab>

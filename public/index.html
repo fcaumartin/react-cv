@@ -31,7 +31,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div id="root"></div>
+          <div id="candidatheque_cv_panel"></div>
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
 <script>
   //console.log("start");
   window.addEventListener("resize", function() {
-      //console.log("resize");
+      console.log("resize");
       let paper = document.querySelector(".paper");
       let l1 = paper.clientWidth;
       let h1 = paper.clientHeight;
@@ -73,5 +73,6 @@
   });
 
   window.dispatchEvent(new Event('resize'));
+  setTimeout( ()=>{window.dispatchEvent(new Event('resize'));}, 500 );
 
 </script>

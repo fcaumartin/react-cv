@@ -11,5 +11,5 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
     <CV />,
-    document.getElementById('root')
+    document.getElementById('candidatheque_cv_panel')
 );
