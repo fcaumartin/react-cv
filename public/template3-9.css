@@ -1,13 +1,5 @@
-/* @font-face {
-    font-family: "font1";
-    src: url("fonts/fa-regular-400.woff2") format("woff2"),
-           url("fonts/fa-regular-400.woff") format("woff");
-   } */
-
-
 /* Habillage layout */
 .paper {
-    /* font-family: "font1"; */
     border: 2px gray solid;
     box-shadow: 10px 10px 10px gray;
     width: 21cm;
@@ -16,6 +8,8 @@
     overflow-wrap: break-word;
     /* word-break: break-all; */
 }
+
+/********** Structure Template ***********/
 
 .experience {
     display: grid;
@@ -52,14 +46,14 @@
 .paper {
     display: grid;
     grid-template-columns: 1fr 2.5fr;
-    grid-template-rows: 0.4fr repeat(2, 0.2fr) 0.4fr 0.8fr repeat(2, 0.5fr);
+    grid-template-rows: repeat(3, 0.2fr) 0.4fr 0.8fr repeat(2, 0.5fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
     
     .photo { grid-area: 1 / 1 / 4 / 2; }
     .identite { grid-area: 1 / 2 / 2 / 3; }
-    .titre { grid-area: 2 / 2 / 3 / 3; }
+    .paper>.titre { grid-area: 2 / 2 / 3 / 3; }
     .intro { grid-area: 3 / 2 / 4 / 3; }
     .profil { grid-area: 3 / 1 / 5 / 2; }
     .competences { grid-area: 5 / 1 / 6 / 2; }
@@ -143,11 +137,16 @@
 }
 
 /* Paramètres bloc poste */
-.paper>.titre>.poste{
+.paper>.titre>.poste {
     font-size: 1.5em;
     text-transform: uppercase;
+    margin-top: -2px;
+    padding-top: 20px;
 }
-
+.paper>.titre {
+    margin-top: -2px;
+    padding-top: 10px;
+}
 
 /* Mise en page texte */
 .paper>.intro {
@@ -270,4 +269,33 @@
 
 meter[value]::-webkit-meter-optimum-value {
 background: gray;
+}
+
+
+/********** Conditions d'impressions **********/
+
+@media print {
+/* Sélection des zones */ 
+body * { 
+    visibility: hidden; 
+}
+.no-print { 
+    display: none; 
+}
+.paper { 
+    visibility: visible; display: grid; 
+    margin-top: 0px !important; margin-left: -15px !important; transform: scale(1) !important;
+    border: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+.paper * { 
+    visibility: visible; 
+}
+
+/* Forçage impression background */ 
+* { -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+    color-adjust: exact !important;                 /*Firefox*/
+}
+
 }

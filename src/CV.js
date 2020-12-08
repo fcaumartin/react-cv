@@ -34,7 +34,7 @@ class CV extends React.Component {
                     dateFin: "maintenant", 
                     titre: "Lead developer", 
                     entreprise: "TheBox", 
-                    logo:"http://test.candidatheque.com/assets/photos/logo1.png",
+                    logo:"http://test.candidatheque.com/assets/photos/logo1.png", 
                     description: "azeazeaze" 
                 },
                 { 
@@ -184,11 +184,7 @@ class CV extends React.Component {
         reseaux[i] = exp;
         this.setState({ reseaux });
     }
-
-
     render() {
-        console.log("test")
-        console.log(this.state.experiences[0].logo)
         return (
             <div className="row">
                 <div className="col-6 no-print">
