@@ -73,7 +73,7 @@ class FormExperience extends React.Component {
                                 label="Logo"
                                 custom
                                 // value={this.props.value.logo}
-                                // onChange={(evt) => this.handleChange(evt)}
+                                onChange={(evt) => this.handleChange(evt)}
                                 ref="logo"
                                 placeholder="Logo"
                             />

@@ -69,34 +69,6 @@
     .formations { grid-area: 6 / 1 / 9 / 4; }
 
 
-/********** Conditions d'impressions **********/
-
-@media print {
-    /* Sélection des zones */ 
-    body * { 
-        visibility: hidden; 
-    }
-    .no-print { 
-        display: none; 
-    }
-    .paper { 
-        visibility: visible; display: grid; 
-        margin-top: 0px !important; margin-left: 0px !important; transform: scale(1) !important;
-        border: 0px;
-        width: 100vw;
-        height: 100vh;
-    }
-    .paper * { 
-        visibility: visible; 
-    }
-    
-    /* Forçage impression background */ 
-    * { -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
-        color-adjust: exact !important;                 /*Firefox*/
-    }
-    
-    }
-
 /* .paper>.identite>.nom:before {
     font-family: "font1";
     content: "\f556"; 
@@ -142,7 +114,6 @@
 .paper>.identite>.nom {
     text-transform: uppercase;
     font-size: 3em;
-    margin-bottom: -40px;
     color: white;
 }
 
@@ -305,3 +276,32 @@ meter[value]::-webkit-meter-optimum-value {
 .paper>.formations>div>.formation>.description {
     display: none;
 }
+
+
+/********** Conditions d'impressions **********/
+
+@media print {
+    /* Sélection des zones */ 
+    body * { 
+        visibility: hidden; 
+    }
+    .no-print { 
+        display: none; 
+    }
+    .paper { 
+        visibility: visible; display: grid; 
+        margin-top: 0px !important; margin-left: 0px !important; transform: scale(1) !important;
+        border: 0px;
+        width: 100vw;
+        height: 100vh;
+    }
+    .paper * { 
+        visibility: visible; 
+    }
+    
+    /* Forçage impression background */ 
+    * { -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+        color-adjust: exact !important;                 /*Firefox*/
+    }
+    
+    }

@@ -12,7 +12,11 @@ const FormProfil = (props) => {
     // const [isLoading, setIsLoading] = useState(false);
     // const [options, setOptions] = useState([]);
 
-    
+    const [checkPhoto, setcheckPhoto] = React.useState(false);
+
+    const handleChangePhoto = () => {
+    setcheckPhoto(!checkPhoto);
+     }
 
     const handleChangeMetier = (query) => {
         
@@ -54,7 +58,16 @@ const FormProfil = (props) => {
         return (
             <Form>
                 <Form.Row className="mb-2">
-                    <Col className="col-4">
+                <Col className="col-1">
+                        <Form.Check 
+                                type="checkbox"
+                                id="default-checkbox"
+                                label="Photo"
+                                checked={checkPhoto}
+                                onChange={handleChangePhoto}
+                        />
+                    </Col>
+                    <Col className="col">
                         <Form.Control
                             value={props.value.nom}
                             onChange={(evt) => { 
@@ -65,7 +78,7 @@ const FormProfil = (props) => {
                             
                         />
                     </Col>
-                    <Col className="col-4">
+                    <Col className="col">
                         <Form.Control
                             value={props.value.prenom}
                             onChange={(evt) => { 
@@ -75,7 +88,8 @@ const FormProfil = (props) => {
                             placeholder="Prénom"
                         />
                     </Col>
-                    <Col className="col-4">
+                    {checkPhoto?                 
+                    <Col className="col">
                         <Form.File 
                                 // id="custom-file"
                                 label="Photo"
@@ -88,6 +102,7 @@ const FormProfil = (props) => {
                                 onChange={ (elt) => { this.handleUploadPhoto(elt) } }
                             />
                     </Col>
+                :""}
                 </Form.Row>
                 <Form.Row className="mb-2">  
                     <Col>

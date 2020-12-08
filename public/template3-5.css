@@ -207,7 +207,12 @@ header, .paper>.identite {
 .paper>.experiences>.experience>.description {
     margin-bottom: 1em;
 }
-.experience.org {
+
+.paper>.experiences>div>.experience {
+    margin-top: 5px;
+}
+
+/* .experience.org {
     overflow: auto;
 }
 .experience.org .entry {
@@ -219,7 +224,7 @@ header, .paper>.identite {
 }
 .experience.org.n1 .entry:nth-child(3n+1) {
     clear: left;
-}
+} */
 /*
 .paper>.experiences>div>.experience>.ville {
     font-weight: 600;
@@ -250,9 +255,6 @@ header, .paper>.identite {
     font-size: 1.2em;
     border-bottom: 1.5px darkgray solid;
 }
-.description {
-    margin-left: 100px;
-    }
 
 /* Paramètres bloc Compétences */
 .paper>.competences>header {
