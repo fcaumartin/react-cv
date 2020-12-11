@@ -16,34 +16,20 @@ const FormProfil = (props) => {
 
     const handleChangeMetier = (query) => {
         
-        // console.log(query.rome);
+        console.log(query);
         //setRome(query.rome);
+        if (query) {
+            props.value.metier=query; 
+            props.value.titre = query.libelle;
+            props.onProfilChange(props.value);
+        }
 
-        props.value.metier=query; 
-        props.onProfilChange(props.value)
-
-        // setIsLoading( true );
-        // axios.get("https://test.candidatheque.com/api/metiers?libelle=" + query)
-        // .then( (data) => {
-        //     console.log(data);
-        //     setIsLoading( false );
-        //     setOptions( data.data );
-        // });
-        // fetch("https://test.candidatheque.com/api/metiers?libelle=" + query)
-        // .then((resp) => resp.json())
-        // .then((items) => {
-        //     console.log(items);
-        //     setOptions(items);
-        //     setIsLoading(false);
-        // });
-        
-        
     }
 
     const loadOptions = (evt, callback) => {
         console.log(evt);
         
-        axios.get("https://test.candidatheque.com/api/metiers?libelle=" + evt)
+        axios.get("https:/127.0.0.1:8000/api/cv/metiers/" + evt)
         .then( (data) => {
             //console.log(data);
             callback(data.data);
@@ -113,44 +99,24 @@ const FormProfil = (props) => {
                 </Form.Row>
                 <Form.Row>  
                     <Col>
-                        {/* <Form.Control  className="mb-2"
-                            value={this.props.value.titre}
-                            onChange={() => { 
-                                this.props.value.titre=this.refs.titreTextInput.value; 
-                                this.props.onProfilChange(this.props.value)
-                            }}
-                            ref="titreTextInput" placeholder="Titre"
-                        /> */}
-                        {/* <AsyncTypeahead   
-                            // positionFixed={true}
-                            className="mb-2"
-                            isLoading={isLoading}
-                            id="654"
-                            labelKey="libelle"
-                            onChange={setMetier}
-                            options={options}
-                            placeholder="Métier..."
-                            selected={metier}
-                            // value={metier}
-                            minLength={3}
-                            onBlur={ (evt) => { 
-                                props.value.metier=evt.target.value; 
-                                props.onProfilChange(props.value)
-                            } }
-                            onSearch={ handleSearch }
-                            renderMenuItemChildren={(option, props) => (
-                                <span>{option.libelle}</span>
-                            )}
-                        /> */}
                         <AsyncSelect
                             defaultOptions={true}
                             className="mb-2"
                             isClearable={true}
                             loadOptions={loadOptions}
                             getOptionLabel={ (met) => { return met.libelle } }
-                            // onInputChange={handleCherche}
+                            getOptionValue={ (met) => { return met.id } }
                             placeholder="Saisissez votre métier..."
                             onChange={handleChangeMetier}
+                        />
+                        <Form.Control
+                            className="mb-2"
+                            value={props.value.titre}
+                            onChange={(evt) => { 
+                                props.value.titre=evt.target.value; 
+                                props.onProfilChange(props.value)
+                            }}
+                            placeholder="Ville"
                         />
                         <Form.Control
                             as="textarea"
