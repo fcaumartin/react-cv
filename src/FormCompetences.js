@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Button, Col, Form} from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
-// import axios from 'axios';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
@@ -16,19 +16,19 @@ const FormCompetences = (props) => {
         console.log("loading react-select async for competences")
         console.log(props.metier);
 
-        if ('rome' in props.metier && 'competences' in props.metier.rome) {
-            let data = props.metier.rome.competences.filter( c => c.libelle.toLowerCase().includes(evt) );
-            console.log(data);
-            callback(data);
-        }
-        //let id_rome = props.metier.rome.split("/")[3];
-        // console.log(id_rome);
-        // axios.get("https://test.candidatheque.com/api/cv/competences/" + id_rome + "/" + evt )
-        // .then( (data) => {
+        // if ('rome' in props.metier && 'competences' in props.metier.rome) {
+        //     let data = props.metier.rome.competences.filter( c => c.libelle.toLowerCase().includes(evt) );
         //     console.log(data);
+        //     callback(data);
+        // }
+        let id_metier = props.metier.id;
+        console.log(id_metier);
+        axios.get("https://127.0.0.1:8000/api/cv/competences/" + id_metier + "/" + evt )
+        .then( (data) => {
+            console.log(data);
              
-        //     callback(data.data);
-        // });
+            callback(data.data);
+        });
     }
 
     const handleSelect = (evt) => {
@@ -45,7 +45,8 @@ const FormCompetences = (props) => {
                 </Col>
                 <Col className="col-4" md={10}>
                     <AsyncSelect
-                        //defaultOptions={true}
+                        cacheOptions
+                        defaultOptions={loadOptions}
                         loadOptions={loadOptions}
                         getOptionLabel={ (met) => { return met.libelle } }
                         // onInputChange={handleCherche}
